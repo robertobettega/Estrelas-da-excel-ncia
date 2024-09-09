@@ -12,16 +12,39 @@ class home extends Model
 {
     use HasFactory;
 
-    public static function GetFugulin()
+    /**
+     * 
+     * Puxando todos os usuarios do banco da central de servicos
+     */
+    public static function GetAllUsers()
     {
-
-        $table = "censo_fugulin.censo_fugulin_fugulin";
-        $fields = "*";
+        $table = "centralservicos.usuario";
+        $fields = "nome, sobrenome";
         $where = "";
     
         $dadosMySql = DB::connection('mysql')->select("SELECT $fields FROM $table");
         return response()->json($dadosMySql);
+    }
 
+    /**
+     * 
+     * Consulta resonsável por puxar todas as atribuições
+     */
+    public static function GetAllAtributes()
+    {
+        
+    }
+
+    public static function GetQualidades()
+    {
+
+    }
+
+    /**
+     * Método resposnável em reornas os atributos da qualidade selecionada
+     */
+    public static function atributesReturn()
+    {
 
     }
     
