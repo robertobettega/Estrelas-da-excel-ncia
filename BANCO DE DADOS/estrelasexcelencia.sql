@@ -1,7 +1,10 @@
--- phpMyAdmin SQL Dump
+
+-- ARQUIVO DESTINA PARA QUEM QUISER: 
+--  1.IMPLANTAR O BANCO DENTRO DA PRÓPRIA MAQUINA (LOCAL)
+--  2.FAZER INSERTS DE UM JEITO MAIS SIMPLES PARA TESTES
+
+--phpMyAdmin SQL Dump
 -- version 5.2.0
--- https://www.phpmyadmin.net/
---
 -- Host: 127.0.0.1
 -- Tempo de geração: 09-Set-2024 às 17:13
 -- Versão do servidor: 10.4.27-MariaDB
@@ -26,6 +29,8 @@ SET time_zone = "+00:00";
 --
 -- Estrutura da tabela `atributos`
 --
+CREATE DATABASE  IF NOT EXISTS `estrelaexcelencia` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `estrelaexcelencia`;
 
 CREATE TABLE `atributos` (
   `id` int(11) NOT NULL,
@@ -153,6 +158,22 @@ ALTER TABLE `atributos`
 ALTER TABLE `pin`
   ADD CONSTRAINT `fk__ATRIBUTOS1` FOREIGN KEY (`ATRIBUTOS_idATRIBUTOS`) REFERENCES `atributos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
+
+INSERT INTO `pin` (`id`, `ATRIBUTOS_idATRIBUTOS`, `USUARIO`, `JUSTIFICATIVA`, `DEDICATORIA`, `DATA_ATRIBUICAO`) VALUES
+(15, 1, 'Usuario5', 'Justificativa para Respeito extra', 'Dedicatoria para Respeito extra', '2024-09-09 14:30:00');
+
+(6, 2, 'Usuario6', 'Justificativa para Pontualidade extra', 'Dedicatoria para Pontualidade extra', '2024-09-09 14:45:00'),
+(7, 3, 'Usuario7', 'Justificativa para Proatividade extra', 'Dedicatoria para Proatividade extra', '2024-09-09 15:00:00'),
+(8, 4, 'Usuario8', 'Justificativa para Comunicação extra', 'Dedicatoria para Comunicação extra', '2024-09-09 15:15:00'),
+(9, 1, 'Usuario9', 'Justificativa adicional para Respeito', 'Dedicatoria adicional para Respeito', '2024-09-09 15:30:00');
+
+INSERT INTO `pin` (`id`, `ATRIBUTOS_idATRIBUTOS`, `USUARIO`, `JUSTIFICATIVA`, `DEDICATORIA`, `DATA_ATRIBUICAO`) VALUES
+(10, 1, 'Usuario1', 'Nova justificativa para Respeito', 'Nova dedicatoria para Respeito', '2024-09-09 16:00:00'),
+(11, 2, 'Usuario2', 'Nova justificativa para Pontualidade', 'Nova dedicatoria para Pontualidade', '2024-09-09 16:15:00'),
+(12, 3, 'Usuario3', 'Nova justificativa para Proatividade', 'Nova dedicatoria para Proatividade', '2024-09-09 16:30:00'),
+(13, 4, 'Usuario4', 'Nova justificativa para Comunicação', 'Nova dedicatoria para Comunicação', '2024-09-09 16:45:00'),
+(14, 1, 'Usuario1', 'Justificativa adicional para Respeito', 'Dedicatoria adicional para Respeito', '2024-09-09 17:00:00');
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

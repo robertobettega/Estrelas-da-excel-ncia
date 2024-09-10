@@ -19,11 +19,11 @@ class home extends Model
     public static function GetAllUsers()
     {
         $table = "centralservicos.usuario";
-        $fields = "nome, sobrenome";
+        $fields = "*";
         $where = "";
     
         $dadosMySql = DB::connection('mysql')->select("SELECT $fields FROM $table");
-        return response()->json($dadosMySql);
+        return $dadosMySql;
     }
 
     /**
@@ -33,11 +33,23 @@ class home extends Model
     public static function GetAllAtributes()
     {
         
+        $table = "estrelaexcelencia.atributos";
+        $fields = "*";
+        $where = "";
+    
+        $dadosMySql = DB::connection('mysql')->select("SELECT $fields FROM $table");
+        return $dadosMySql;
+
     }
 
     public static function GetQualidades()
     {
-
+        $table = "estrelaexcelencia.qualidade";
+        $fields = "*";
+        $where = "";
+    
+        $dadosMySql = DB::connection('mysql')->select("SELECT $fields FROM $table");
+        return $dadosMySql;
     }
 
     /**
@@ -46,6 +58,47 @@ class home extends Model
     public static function atributesReturn()
     {
 
+    }
+
+    /**
+     * 
+     * Metodo responsavel por retornar os maiores dos ranks de excelência
+     */
+    public static function getAllExcelenciasUsers($excelencia){
+
+        $query = "
+        WITH rankusuarios AS (
+            SELECT
+                USUARIO,
+                ATRIBUTOS_idATRIBUTOS,
+                COUNT(*) AS count_valor,
+                ROW_NUMBER() OVER (PARTITION BY ATRIBUTOS_idATRIBUTOS ORDER BY COUNT(*) DESC) AS rankvalor
+            FROM estrelaexcelencia.pin
+            GROUP BY USUARIO, ATRIBUTOS_idATRIBUTOS
+        )
+        SELECT
+            USUARIO,
+            ATRIBUTOS_idATRIBUTOS,
+            count_valor,
+            rankvalor as posicoes
+        FROM rankusuarios
+        WHERE rankvalor <= 3 and ATRIBUTOS_idATRIBUTOS = $excelencia;
+    ";
+
+    
+    $dadosMySql = DB::select($query);
+    return $dadosMySql;
+    }
+
+    public static function insertPin($dados)
+    {
+        return DB::table('estrelaexcelencia.pin')->insert([
+            'ATRIBUTOS_idATRIBUTOS' => $dados['ATRIBUTOS_idATRIBUTOS'],
+            'USUARIO'               => $dados['USUARIO'],
+            'JUSTIFICATIVA'         => $dados['JUSTIFICATIVA'],
+            'DEDICATORIA'           => $dados['DEDICATORIA'],
+            'DATA_ATRIBUICAO'       => $dados['DATA_ATRIBUICAO'],
+        ]);
     }
     
 }
