@@ -1,7 +1,6 @@
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Remove a rolagem da página */
 }
 
 body {
@@ -19,8 +18,7 @@ header {
 }
 
 .logo {
-    width: 100px;
-    height: auto;
+    width: 80px;
 }
 
 .h11 {
@@ -44,6 +42,7 @@ header {
 h2 {
     font-family: 'Crimson Text', serif;
     color: #1C2C5C;
+
 }
 
 .container {
@@ -100,7 +99,6 @@ input[type="password"] {
     width: 280px;
     height: 50px;
     border-radius: 15px;
-    border: 3px solid #1C2C5C;
     margin-top: 20px;
     font-size: 20px;
 }
@@ -121,7 +119,6 @@ footer {
 footer img {
     width: 100%;
     margin-top: -3em;
-    /* Ajuste o margin-top para a imagem não sobrepor outros elementos */
 }
 
 h4 a{
@@ -142,7 +139,34 @@ h4 a{
     width: 280px;
     height: 50px;
     border-radius: 15px;
-    border: 3px solid #1C2C5C;
     margin-top: 20px;
     font-size: 20px;
+}
+
+.logo2{
+    width: 60px;
+}
+
+.custom-navbar {
+    background: linear-gradient( #1C2C5C, #13743C); /* Exemplo de gradiente */
+    padding: 1rem; /* Ajusta o espaçamento ao redor do conteúdo */
+}
+
+.navbar-brand{
+    color:#FFFFFF;
+    pointer-events: none;
+    margin-right: 3em;
+    font-family: 'Crimson Text', serif;
+}
+
+.footercadastro{
+height: 2px;
+}
+
+.input-container {
+    margin-bottom: 1rem; /* Espaço entre os inputs */
+}
+
+.input-container:last-child {
+    margin-bottom: 0; /* Remove o espaçamento inferior do último container, se desejado */
 }
