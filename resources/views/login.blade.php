@@ -6,129 +6,21 @@
     <title>Login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css\custom\style.css') }}">
 </head>
 <style>
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    background-color: rgba(249, 244, 245, 0.95);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ajusta o espaçamento entre o conteúdo e o rodapé */
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-}
-
-.logo {
-    width: 100px;
-    height: auto;
-}
-
-.h11 {
-    font-size: 24px;
-    font-family: 'Crimson Text', serif;
-    text-align: center;
-    color: #000000;
-}
-
-.h12 {
-    font-size: 40px;
-    font-family: 'Crimson Text', serif;
-    color: #13743C;
-}
-
-.image-container {
-    display: flex;
-    gap: 30px;
-}
-
-h2 {
-    font-family: 'Crimson Text', serif;
-    color: #1C2C5C;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-input[type="text"] {
-    width: 340px;
-    border: 3px solid #1C2C5C;
-    border-radius: 12px;
-    height: 60px;
-}
-
-.input-container {
-    position: relative;
-}
-
-.input-with-icon, .input-with-icon2 {
-    padding: 10px;
-    width: 450px;
-    border: 3px solid #1C2C5C;
-    border-radius: 12px;
-    height: 30px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 25px 25px;
-    padding-left: 40px;
-    box-sizing: border-box;
-}
 
 .input-with-icon {
-    background-image: url('images/Icone Usuario.png');
+    background-image: url('images/Icone Usuario.png'); /* Caminho corrigido */
 }
 
 .input-with-icon2 {
-    background-image: url('images/Icone Cadeado.png');
+    background-image: url('images/Icone Cadeado.png'); /* Caminho corrigido */
 }
 
 .input-with-icon::placeholder, .input-with-icon2::placeholder {
     color: #1C2C5C;
     font-size: 14px;
-}
-
-.entrar {
-    background: linear-gradient(to right, #1C2C5C, #13743C);
-    color: #FFFFFF;
-    width: 280px;
-    height: 50px;
-    border-radius: 15px;
-    border: 3px solid #1C2C5C;
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-h4 {
-    color: #1C2C5C;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    margin-top: auto; /* Garante que o rodapé fique na parte inferior da tela */
-    padding: 10px; /* Ajuste o padding se necessário */
-}
-
-footer img {
-    width: 100%;
-    margin-top: -30px; /* Ajuste o valor conforme necessário para mover a imagem para cima */
 }
 
 </style>
@@ -150,6 +42,9 @@ footer img {
 <div>
     <h2>Consolidando nossa excelência</h2>
 </div>
+<div class="divisoria">
+<img src="{{ asset('images/Divisória Degradê (5).png') }}" alt="">
+</div>
 
 </header>
 </body>
@@ -159,13 +54,16 @@ footer img {
     <div class="input-container">
         <input type="text" class="input-with-icon" placeholder="Usuário">
     </div>
-    <div class="input-container">
-        <input type="text" class="input-with-icon2" placeholder="Senha">
+    <div class="container">
+        <div class="input-container">
+            <input type="password"  id="password-field" class="input-with-icon2" placeholder="Senha">
+            <img src="{{ asset('images/Icone Olho.png') }}" id="toggle-password" alt="Ícone Olho">
+        </div>
     </div>
 
     <button class="entrar">ENTRAR</button>
    
-    <h4>Novo Usuário?Faça aqui seu cadastro</h4>
+    <h4><a href="cadastro">Novo Usuário?Faça aqui seu cadastro</a></h4>
 
 </div>
 
@@ -173,8 +71,25 @@ footer img {
 
 </main>
 
-<footer> <img src="{{ asset('images/Group 1 (2).png') }}" alt=""></footer>
+<footer> <img src="{{ asset('images/Group 1 (3).png') }}" alt=""></footer>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+            const passwordField = document.getElementById('password-field');
+            const togglePassword = document.getElementById('toggle-password');
+
+            togglePassword.addEventListener('click', function () {
+                // Alterna entre mostrar e esconder a senha
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    togglePassword.src = '{{ asset('images/Icone Olho.png') }}'; // Atualiza para ícone de olho fechado
+                } else {
+                    passwordField.type = 'password';
+                    togglePassword.src = '{{ asset('images/Icone Olho Fechado.png') }}'; // Atualiza para ícone de olho aberto
+                }
+            });
+    });
+    </script>
 </body>
 </html>

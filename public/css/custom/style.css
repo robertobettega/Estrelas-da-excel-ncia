@@ -1,0 +1,148 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Remove a rolagem da página */
+}
+
+body {
+    background-color: rgba(249, 244, 245, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o rodapé fique na parte inferior */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.h11 {
+    font-size: 24px;
+    font-family: 'Crimson Text', serif;
+    text-align: center;
+    color: #000000;
+}
+
+.h12 {
+    font-size: 40px;
+    font-family: 'Crimson Text', serif;
+    color: #13743C;
+}
+
+.image-container {
+    display: flex;
+    gap: 30px;
+}
+
+h2 {
+    font-family: 'Crimson Text', serif;
+    color: #1C2C5C;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Garante que a container ocupe o espaço disponível */
+}
+
+input[type="text"] {
+    width: 340px;
+    border: 3px solid #1C2C5C;
+    border-radius: 12px;
+    height: 60px;
+}
+input[type="password"] {
+    width: 340px;
+    border: 3px solid #1C2C5C;
+    border-radius: 12px;
+    height: 60px;
+}
+
+.input-container {
+    position: relative;
+}
+.input-container img {
+    position: absolute;
+    right: 10px; /* Ajuste conforme necessário */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    cursor: pointer; /* Garante que o ícone não interfira na interação do campo de entrada */
+}
+
+.input-with-icon, .input-with-icon2,.input-with-icon3, .input-with-icon4{
+    padding: 10px;
+    width: 450px;
+    border: 3px solid #1C2C5C;
+    border-radius: 12px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 25px 25px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.entrar {
+    background: linear-gradient(to right, #1C2C5C, #13743C);
+    color: #FFFFFF;
+    width: 280px;
+    height: 50px;
+    border-radius: 15px;
+    border: 3px solid #1C2C5C;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+h4 {
+    margin-bottom: 3em;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+   
+}
+
+footer img {
+    width: 100%;
+    margin-top: -3em;
+    /* Ajuste o margin-top para a imagem não sobrepor outros elementos */
+}
+
+h4 a{
+    text-decoration: none;
+    color: #1C2C5C;
+}
+
+.divisoria{
+   margin-top: -0.8em;
+}
+
+
+/* cadastrar */
+
+.cadastrar {
+    background: linear-gradient(to right, #1C2C5C, #13743C);
+    color: #FFFFFF;
+    width: 280px;
+    height: 50px;
+    border-radius: 15px;
+    border: 3px solid #1C2C5C;
+    margin-top: 20px;
+    font-size: 20px;
+}
