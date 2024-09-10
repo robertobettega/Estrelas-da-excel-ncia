@@ -9,53 +9,61 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <style>
-
-body{
-    background-color: rgba(249, 244, 245, 0.95);
-
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
- header {
+body {
+    background-color: rgba(249, 244, 245, 0.95);
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    padding: 10px; 
+    flex-direction: column;
+    justify-content: space-between; /* Ajusta o espaçamento entre o conteúdo e o rodapé */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
 .logo {
-    width: 100px; 
-    height: auto; 
+    width: 100px;
+    height: auto;
 }
 
-.h11{
+.h11 {
     font-size: 24px;
     font-family: 'Crimson Text', serif;
     text-align: center;
     color: #000000;
 }
-.h12{
+
+.h12 {
     font-size: 40px;
     font-family: 'Crimson Text', serif;
     color: #13743C;
 }
 
 .image-container {
-    display: flex; 
-    gap: 30px; 
+    display: flex;
+    gap: 30px;
 }
-h2{
+
+h2 {
     font-family: 'Crimson Text', serif;
-    color: #1C2C5C ;
+    color: #1C2C5C;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 input[type="text"] {
     width: 340px;
     border: 3px solid #1C2C5C;
@@ -74,27 +82,27 @@ input[type="text"] {
     border-radius: 12px;
     height: 30px;
     background-repeat: no-repeat;
-    background-position: 10px center; /* Ajuste a posição conforme necessário */
-    background-size: 25px 25px; /* Ajuste o tamanho da imagem conforme necessário */
-    padding-left: 40px; /* Adiciona um espaço à esquerda para a imagem */
-    box-sizing: border-box; /* Garante que o padding não afete o tamanho total do input */
+    background-position: 10px center;
+    background-size: 25px 25px;
+    padding-left: 40px;
+    box-sizing: border-box;
 }
 
 .input-with-icon {
-    background-image: url('images/Icone Usuario.png'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('images/Icone Usuario.png');
 }
 
 .input-with-icon2 {
-    background-image: url('images/Icone Cadeado.png'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('images/Icone Cadeado.png');
 }
 
 .input-with-icon::placeholder, .input-with-icon2::placeholder {
-    color: #1C2C5C; /* Cor do placeholder */
+    color: #1C2C5C;
     font-size: 14px;
 }
 
-.entrar{
-    background: linear-gradient(to right, #1C2C5C, #13743C); /* Gradiente linear de esquerda para direita */
+.entrar {
+    background: linear-gradient(to right, #1C2C5C, #13743C);
     color: #FFFFFF;
     width: 280px;
     height: 50px;
@@ -104,15 +112,23 @@ input[type="text"] {
     font-size: 20px;
 }
 
-h4{
+h4 {
     color: #1C2C5C;
 }
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
- 
+    position: relative;
+    width: 100%;
+    margin-top: auto; /* Garante que o rodapé fique na parte inferior da tela */
+    padding: 10px; /* Ajuste o padding se necessário */
+}
+
+footer img {
+    width: 100%;
+    margin-top: -30px; /* Ajuste o valor conforme necessário para mover a imagem para cima */
 }
 
 </style>
@@ -157,7 +173,7 @@ footer{
 
 </main>
 
-<footer> <img src="{{ asset('images/Ondasfooter.png') }}" alt=""></footer>
+<footer> <img src="{{ asset('images/Group 1 (2).png') }}" alt=""></footer>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
