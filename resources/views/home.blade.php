@@ -45,15 +45,18 @@
             <div>Hospitalidade</div>
         </div>
         <div>
-            <img src="imagens/Prestreza.png" style="width: 160px; margin: 15px" alt="Prestreza">
+            <img src="imagens/Prestreza.png" style="width: 160px; margin: 15px" alt="Prestreza" data-bs-toggle="modal"
+                data-bs-target="#AvaliacaoModal">
             <div>Prestreza</div>
         </div>
         <div>
-            <img src="imagens/Inovação.png" style="width: 160px; margin: 15px" alt="Inovação">
+            <img src="imagens/Inovação.png" style="width: 160px; margin: 15px" alt="Inovação" data-bs-toggle="modal"
+                data-bs-target="#AvaliacaoModal">
             <div>Inovação</div>
         </div>
         <div>
-            <img src="imagens/Segurança.png" style="width: 160px; margin: 15px" alt="Segurança">
+            <img src="imagens/Segurança.png" style="width: 160px; margin: 15px" alt="Segurança" data-bs-toggle="modal"
+                data-bs-target="#AvaliacaoModal">
             <div>Segurança</div>
         </div>
     </div>
@@ -62,7 +65,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Dedicar pin!</h1>
+                    <img class="logo img-fluid" src="{{ asset('images/Logo Hospital Rio Grande.png') }}"
+                        style="width: 30px" alt="Logo">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> Dedicar pin!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -95,6 +100,8 @@
                                 @endforeach
                             </select>
                         </div>
+                        <label for="customRange" class="form-label">Estrelas</label>
+                        <input type="range" class="form-range" min="0" max="5" id="customRange" style="$form-range-track-width: 10">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -109,54 +116,6 @@
     <div class="card" style="margin: 15px; padding: 15px">
 
         <div class="container-fluid row justify-content-center">
-
-<<<<<<< HEAD
-
-=======
-        {{-- CAIXA DE OPÇÕES CRIADA COM BOOTSTRAP PARA FAZER INPUT DE TESTE PARA O BANCO DE DADOS --}}
-        <div class="row">
-            <label>Caixa usuário:</label>
-                <div class="col-2 pt-2">
-                    {{-- CAIXA DE OPÇÕES QUE PEGA OS USUÁRIOS DO BANCO --}}
-                    <select class="col form-select caixausuario" aria-label="Selecione o Usuário" id="caixausuario">
-                        <option id="option" selected> Adicione o usuário</option>
-                        @foreach ($users as $usuarios)
-                        <option value={{ $usuarios->id }}>
-                            {{ $usuarios->nome}} {{ $usuarios->sobrenome }} N°{{ $usuarios->matricula }} ({{$usuarios->id}})
-                        </option>
-                        @endforeach
-                      </select>
-                </div>    
-
-            <label>Caixa excelencia:</label>
-                <div class="col-2 pt-2">
-                    {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
-                    <select id="caixaexcelencia" class="col form-select" aria-label="Selecione o Usuário">
-                        <option selected>Selecione a excelencia</option>
-                        @foreach ($excelencias_opcoes as $opcoes)
-                        <option value="{{ $opcoes->id }}">
-                            {{ $opcoes->DESCRICAO }}
-                            ID:({{$opcoes->id}})
-                        </option>
-                        @endforeach
-                      </select>
-                </div>
-                
-            <label>Caixa <b>sub-</b>excelencias</label>
-                <div class="col-2 pt-2">
-                    {{-- CAIXA DE OPÇÕES QUE PEGA AS SUB-EXCELENCIAS --}}
-                    <select class="col form-select" aria-label="Selecione a sub-excelencia">
-                        <option selected>Selecione a sub-excelencia</option>
-                        @foreach ($excelencias as $opcoes)
-                        <option value="{{ $opcoes->id }}">
-                            {{ $opcoes->DESCRICAO }}
-                            ID:({{$opcoes->ID_QUALIDADE}})
-                        </option>
-                        @endforeach
-                      </select>
-                </div>  
-        </div>
->>>>>>> 63533f77ae68c6644dd2728542d94cd2284966ad
 
             <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
                 <div class="row g-0">
