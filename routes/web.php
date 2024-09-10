@@ -8,3 +8,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [HomeController::class, 'HomePage']);
+
+
+Route::get('/login', function () {
+    return view('login');
+});
