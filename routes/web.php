@@ -11,6 +11,12 @@ Route::get('/home', [HomeController::class, 'HomePage']);
 
 Route::get('/rank', [HomeController::class, 'Usersexceleciasall']);
 
+route::get('/login/{pedido}', function ($pedido) {
+    return $pedido;
+});
+
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/insert', [HomeController::class, 'atribuirGamificacao']);

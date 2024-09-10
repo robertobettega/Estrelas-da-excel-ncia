@@ -89,5 +89,16 @@ class home extends Model
     $dadosMySql = DB::select($query);
     return $dadosMySql;
     }
+
+    public static function insertPin($dados)
+    {
+        return DB::table('estrelaexcelencia.pin')->insert([
+            'ATRIBUTOS_idATRIBUTOS' => $dados['ATRIBUTOS_idATRIBUTOS'],
+            'USUARIO'               => $dados['USUARIO'],
+            'JUSTIFICATIVA'         => $dados['JUSTIFICATIVA'],
+            'DEDICATORIA'           => $dados['DEDICATORIA'],
+            'DATA_ATRIBUICAO'       => $dados['DATA_ATRIBUICAO'],
+        ]);
+    }
     
 }
