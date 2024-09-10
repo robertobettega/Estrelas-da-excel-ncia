@@ -35,8 +35,9 @@
             </div>
         </div>
     </nav>
-
+    
     <div class="container-fluid text-center justify-content-center" style="display: flex; margin: 15px">
+
         <div>
             <img src="imagens/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Hospitalidade">
             <div>Hospitalidade</div>
@@ -55,9 +56,55 @@
         </div>
     </div>
 
+{{-- OS CARDS ESTÃO USANDO O 'FOREACH' PARA PUXAR OS TOP 3 DE CADA EXCELENCIA, CUIDADO AO ALTERAR O FRONT-END --}}
     <div class="card" style="margin: 15px; padding: 15px">
 
         <div class="container-fluid row justify-content-center">
+
+        {{-- CAIXA DE OPÇÕES CRIADA COM BOOTSTRAP PARA FAZER INPUT DE TESTE PARA O BANCO DE DADOS --}}
+        <div class="row">
+            <label>Caixa usuário:</label>
+                <div class="col-2 pt-2">
+                    {{-- CAIXA DE OPÇÕES QUE PEGA OS USUÁRIOS DO BANCO --}}
+                    <select class="col form-select" aria-label="Selecione o Usuário">
+                        <option selected> Adicione o usuário</option>
+                        @foreach ($users as $usuarios)
+                        <option>
+                            {{ $usuarios->nome}} {{ $usuarios->sobrenome }} {{ $usuarios->matricula }} ({{$usuarios->id}})
+                        </option>
+                        @endforeach
+                      </select>
+                </div>    
+
+            <label>Caixa excelencia:</label>
+                <div class="col-2 pt-2">
+                    {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
+                    <select class="col form-select" aria-label="Selecione o Usuário">
+                        <option selected>Selecione a excelencia</option>
+                        @foreach ($excelencias_opcoes as $opcoes)
+                        <option value="{{ $opcoes->id }}">
+                            {{ $opcoes->DESCRICAO }}
+                            ID:({{$opcoes->id}})
+                        </option>
+                        @endforeach
+                      </select>
+                </div>
+                
+            <label>Caixa <b>sub-</b>excelencias</label>
+                <div class="col-2 pt-2">
+                    {{-- CAIXA DE OPÇÕES QUE PEGA AS SUB-EXCELENCIAS --}}
+                    <select class="col form-select" aria-label="Selecione a sub-excelencia">
+                        <option selected>Selecione a sub-excelencia</option>
+                        @foreach ($excelencias as $opcoes)
+                        <option value="{{ $opcoes->id }}">
+                            {{ $opcoes->DESCRICAO }}
+                            ID:({{$opcoes->ID_QUALIDADE}})
+                        </option>
+                        @endforeach
+                      </select>
+                </div>  
+        </div>
+
             <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -67,12 +114,14 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Roberto Bettega <span
-                                        class="badge rounded-pill text-bg-success">1º</span></li>
-                                <li class="list-group-item">Gabriel Mendes <span
-                                        class="badge rounded-pill text-bg-success">2º</span></li>
-                                <li class="list-group-item">Pedro Nelson <span
-                                        class="badge rounded-pill text-bg-success">3º</span></li>
+
+                            @foreach ($hospitalidade_rank as $user)
+                                <li class="list-group-item">
+                                    <b>{{ $user->USUARIO }}</b>
+                                    ({{$user->count_valor}})
+                                    <span class="badge rounded-pill text-bg-success">{{$user->posicoes}}°</span>
+                                </li>
+                            @endforeach
                             </ul>
                         </div>
                     </div>
@@ -89,12 +138,13 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Roberto Bettega <span
-                                        class="badge rounded-pill text-bg-success">1º</span></li>
-                                <li class="list-group-item">Gabriel Mendes <span
-                                        class="badge rounded-pill text-bg-success">2º</span></li>
-                                <li class="list-group-item">Pedro Nelson <span
-                                        class="badge rounded-pill text-bg-success">3º</span></li>
+                                @foreach ($prestreza_rank as $user)
+                                <li class="list-group-item">
+                                    <b>{{ $user->USUARIO }}</b>
+                                    ({{$user->count_valor}})
+                                    <span class="badge rounded-pill text-bg-success">{{$user->posicoes}}°</span>
+                                </li>
+                            @endforeach
                             </ul>
                         </div>
                     </div>
@@ -110,12 +160,13 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Roberto Bettega <span
-                                        class="badge rounded-pill text-bg-success">1º</span></li>
-                                <li class="list-group-item">Gabriel Mendes <span
-                                        class="badge rounded-pill text-bg-success">2º</span></li>
-                                <li class="list-group-item">Pedro Nelson <span
-                                        class="badge rounded-pill text-bg-success">3º</span></li>
+                            @foreach ($inovacao_rank as $user)
+                                <li class="list-group-item">
+                                    <b>{{ $user->USUARIO }}</b> 
+                                    ({{$user->count_valor}})
+                                    <span class="badge rounded-pill text-bg-success">{{$user->posicoes}}°</span>
+                                </li>
+                            @endforeach
                             </ul>
                         </div>
                     </div>
@@ -131,12 +182,14 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Roberto Bettega <span
-                                        class="badge rounded-pill text-bg-success">1º</span></li>
-                                <li class="list-group-item">Gabriel Mendes <span
-                                        class="badge rounded-pill text-bg-success">2º</span></li>
-                                <li class="list-group-item">Pedro Nelson <span
-                                        class="badge rounded-pill text-bg-success">3º</span></li>
+
+                            @foreach ($seguranca_rank as $user)
+                                <li class="list-group-item">
+                                    <b>{{ $user->USUARIO }}</b>
+                                    ({{$user->count_valor}})
+                                    <span class="badge rounded-pill text-bg-success">{{$user->posicoes}}°</span>
+                                </li>
+                            @endforeach
                             </ul>
                         </div>
                     </div>
