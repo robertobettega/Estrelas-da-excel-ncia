@@ -66,11 +66,11 @@
             <label>Caixa usuário:</label>
                 <div class="col-2 pt-2">
                     {{-- CAIXA DE OPÇÕES QUE PEGA OS USUÁRIOS DO BANCO --}}
-                    <select class="col form-select" aria-label="Selecione o Usuário">
-                        <option selected> Adicione o usuário</option>
+                    <select class="col form-select caixausuario" aria-label="Selecione o Usuário" id="caixausuario">
+                        <option id="option" selected> Adicione o usuário</option>
                         @foreach ($users as $usuarios)
-                        <option>
-                            {{ $usuarios->nome}} {{ $usuarios->sobrenome }} {{ $usuarios->matricula }} ({{$usuarios->id}})
+                        <option value={{ $usuarios->id }}>
+                            {{ $usuarios->nome}} {{ $usuarios->sobrenome }} N°{{ $usuarios->matricula }} ({{$usuarios->id}})
                         </option>
                         @endforeach
                       </select>
@@ -79,7 +79,7 @@
             <label>Caixa excelencia:</label>
                 <div class="col-2 pt-2">
                     {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
-                    <select class="col form-select" aria-label="Selecione o Usuário">
+                    <select id="caixaexcelencia" class="col form-select" aria-label="Selecione o Usuário">
                         <option selected>Selecione a excelencia</option>
                         @foreach ($excelencias_opcoes as $opcoes)
                         <option value="{{ $opcoes->id }}">
@@ -196,13 +196,14 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+    <script src="{{ asset('js\custom\custom.js') }}"></script>
 </body>
 
 </html>

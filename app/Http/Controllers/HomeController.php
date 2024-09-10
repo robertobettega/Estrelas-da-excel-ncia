@@ -47,10 +47,23 @@ class HomeController extends Controller
     // return $users;
 }
 
-    public function atribuirGamificacao()
+public function atribuirGamificacao()
     {
+        $campo1 = 1;
+        $campo2 = 2;
+        $campo3 = 3;
 
+        $dados = [
+            'ATRIBUTOS_idATRIBUTOS' => $campo1,
+            'USUARIO'               => 'user123',
+            'JUSTIFICATIVA'         => 'Motivo da atribuição',
+            'DEDICATORIA'           => 'Dedicatória especial',
+            'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
+        ];
 
+        $insert = Home::insertPin($dados);
+
+        return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
     }
 
     /**
