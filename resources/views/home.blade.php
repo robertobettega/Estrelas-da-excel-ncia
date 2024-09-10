@@ -10,6 +10,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css\custom\style.css') }}">
 </head>
 
 <body>
@@ -23,9 +25,8 @@
                 <img src="imagens/Logo estrelas da excelencia.png" alt="Estrelas da Excelência" style="width: 160px">
             </div>
             <div class="dropdown">
-                <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Roberto Bettega
+                <button class="entrar-navbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Roberto Bettega <i class="bi bi-person-fill"></i>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Meus dados</a></li>
@@ -100,13 +101,26 @@
                                 @endforeach
                             </select>
                         </div>
-                        <label for="customRange" class="form-label">Estrelas</label>
-                        <input type="range" class="form-range" min="0" max="5" id="customRange" style="$form-range-track-width: 10">
+
+                        <label>Estrelas</label>
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Save changes</button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="entrar-navbar"><b>SALVAR<b></button>
                 </div>
             </div>
         </div>

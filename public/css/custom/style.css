@@ -1,7 +1,6 @@
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Remove a rolagem da página */
 }
 
 body {
@@ -105,6 +104,18 @@ input[type="password"] {
     font-size: 20px;
 }
 
+.entrar-navbar {
+    background: linear-gradient(to right, #1C2C5C, #13743C);
+    color: #FFFFFF;
+    width: wrap;
+    height: 40px;
+    border-radius: 15px;
+    padding: 7px;
+    border: 0px;
+    font-size: 16px;
+}
+
+
 h4 {
     margin-bottom: 3em;
 }
@@ -145,4 +156,40 @@ h4 a{
     border: 3px solid #1C2C5C;
     margin-top: 20px;
     font-size: 20px;
+}
+
+.rate {
+    
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+   
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
 }
