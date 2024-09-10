@@ -6,6 +6,7 @@
     <title>Login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css\custom\style.css') }}">
 </head>
 <style>
@@ -32,17 +33,29 @@
     font-size: 14px;
 }
 
+html,body{
+    overflow: hidden;
+}
+
 </style>
 <body>
-<header class="text-center ">
 
-    <h2>Cadastro de Usuário</h2>
+<nav class="navbar navbar-expand-lg custom-navbar">
+        <img class="logo2" src="{{ asset('images/Logo Hospital Rio Grande.png') }}" alt="">
+        <div class="d-flex flex-column align-items-center mx-auto">
+            <a class="navbar-brand" href="#"><strong>Estrelas da</strong></a>
+            <a class="navbar-brand" href="#"><strong>EXCELÊNCIA</strong></a>
+        </div>
+       <span ></span>
+</nav>
+   
 
-<div class="divisoria">
+<div class="text-center divisoria">
+<h2><strong>Cadastro de Usuário</strong></h2>
 <img src="{{ asset('images/Divisória Degradê (5).png') }}" alt="">
 </div>
 
-</header>
+
 <main>
 
 <div class="container">
@@ -71,7 +84,7 @@
 
 </main>
 
-<footer> <img src="{{ asset('images/Group 1 (3).png') }}" alt=""></footer>
+<footer class="footercadastro" > <img src="{{ asset('images/Group 1 (3).png') }}" alt=""></footer>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script>document.addEventListener('DOMContentLoaded', function () {

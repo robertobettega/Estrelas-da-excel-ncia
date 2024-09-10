@@ -18,8 +18,7 @@ header {
 }
 
 .logo {
-    width: 100px;
-    height: auto;
+    width: 80px;
 }
 
 .h11 {
@@ -43,6 +42,7 @@ header {
 h2 {
     font-family: 'Crimson Text', serif;
     color: #1C2C5C;
+
 }
 
 .container {
@@ -99,7 +99,6 @@ input[type="password"] {
     width: 280px;
     height: 50px;
     border-radius: 15px;
-    border: 3px solid #1C2C5C;
     margin-top: 20px;
     font-size: 20px;
 }
@@ -132,7 +131,6 @@ footer {
 footer img {
     width: 100%;
     margin-top: -3em;
-    /* Ajuste o margin-top para a imagem não sobrepor outros elementos */
 }
 
 h4 a{
@@ -153,43 +151,34 @@ h4 a{
     width: 280px;
     height: 50px;
     border-radius: 15px;
-    border: 3px solid #1C2C5C;
     margin-top: 20px;
     font-size: 20px;
 }
 
-.rate {
-    
-    height: 46px;
-    padding: 0 10px;
+.logo2{
+    width: 60px;
 }
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+
+.custom-navbar {
+    background: linear-gradient( #1C2C5C, #13743C); /* Exemplo de gradiente */
+    padding: 1rem; /* Ajusta o espaçamento ao redor do conteúdo */
 }
-.rate:not(:checked) > label {
-   
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+
+.navbar-brand{
+    color:#FFFFFF;
+    pointer-events: none;
+    margin-right: 3em;
+    font-family: 'Crimson Text', serif;
 }
-.rate:not(:checked) > label:before {
-    content: '★ ';
+
+.footercadastro{
+height: 2px;
 }
-.rate > input:checked ~ label {
-    color: #ffc700;    
+
+.input-container {
+    margin-bottom: 1rem; /* Espaço entre os inputs */
 }
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
+
+.input-container:last-child {
+    margin-bottom: 0; /* Remove o espaçamento inferior do último container, se desejado */
 }

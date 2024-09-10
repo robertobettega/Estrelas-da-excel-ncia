@@ -23,6 +23,10 @@
     font-size: 14px;
 }
 
+html,body{
+    overflow: hidden;
+}
+
 </style>
 <body>
 <header class="text-center ">
