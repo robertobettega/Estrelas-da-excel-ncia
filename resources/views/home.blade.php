@@ -29,14 +29,18 @@
                     Roberto Bettega <i class="bi bi-person-fill"></i>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Meus dados</a></li>
+                    <li><a class="dropdown-item" href="Cadastro">Meus dados</a></li>
                     <li><a class="dropdown-item" href="#">Ouvidoria</a></li>
                     <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                    <li><a class="dropdown-item" href="#">Sair</a></li>
+                    <li><a class="dropdown-item" href="login">Sair</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="container-fluid text-center">
+        <h5>Dedique um pin para um colaborador!</h5>
+        <img src="{{ asset('images/Divisória Degradê (5).png') }}" alt="">
+    </div>
 
     <div class="container-fluid text-center justify-content-center" style="display: flex; margin: 15px">
 
@@ -74,7 +78,7 @@
                 <div class="modal-body">
                     {{-- CAIXA DE OPÇÕES CRIADA COM BOOTSTRAP PARA FAZER INPUT DE TESTE PARA O BANCO DE DADOS --}}
                     <div class="row">
-                        <label>Caixa usuário:</label>
+                        <label>Usuário:</label>
                         <div class="col-8 pt-8">
                             {{-- CAIXA DE OPÇÕES QUE PEGA OS USUÁRIOS DO BANCO --}}
                             <select class="col form-select" aria-label="Selecione o Usuário">
@@ -88,7 +92,7 @@
                             </select>
                         </div>
 
-                        <label>Caixa excelencia:</label>
+                        <label>Excelencia:</label>
                         <div class="col-8 pt-8">
                             {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
                             <select class="col form-select" aria-label="Selecione o Usuário">
@@ -105,15 +109,15 @@
                         <label>Estrelas</label>
                         <div class="rate">
                             <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
+                            <label for="star5" title="text">1 stars</label>
                             <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
+                            <label for="star4" title="text">2 stars</label>
                             <input type="radio" id="star3" name="rate" value="3" />
                             <label for="star3" title="text">3 stars</label>
                             <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
+                            <label for="star2" title="text">4 stars</label>
                             <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
+                            <label for="star1" title="text">5 star</label>
                         </div>
 
                     </div>
@@ -129,11 +133,19 @@
     {{-- OS CARDS ESTÃO USANDO O 'FOREACH' PARA PUXAR OS TOP 3 DE CADA EXCELENCIA, CUIDADO AO ALTERAR O FRONT-END --}}
     <div class="card" style="margin: 15px; padding: 15px">
 
+        <div class="text-center">
+            <h4><i class="bi bi-star-fill"></i> Estrelas da excelência</h4>
+            <?php
+            $hoje = date('d/m/Y');
+            ?>
+            <h5> Destaques <?php echo $hoje ?></h5>
+        </div>
+
         <div class="container-fluid row justify-content-center">
 
             <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
                         <img src="imagens/Hospitalidade.png" style="width: 140px" alt="Hospitalidade">
                         <div>Hospitalidade</div>
                     </div>
@@ -157,7 +169,7 @@
 
             <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
                         <img src="imagens/Prestreza.png" style="width: 140px" alt="Prestreza">
                         <div>Prestreza</div>
                     </div>
@@ -179,7 +191,7 @@
 
             <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
                         <img src="imagens/Inovação.png" style="width: 140px" alt="Inovação">
                         <div>Inovação</div>
                     </div>
@@ -201,7 +213,7 @@
 
             <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
                         <img src="imagens/Segurança.png" style="width: 140px" alt="Segurança">
                         <div>Segurança</div>
                     </div>

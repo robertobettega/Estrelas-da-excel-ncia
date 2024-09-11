@@ -75,7 +75,7 @@ html,body{
         </div>
     </div>
 
-    <button class="cadastrar">CADASTRAR</button>
+    <button class="entrar"><b>CADASTRAR<b></button>
    
 
 </div>
