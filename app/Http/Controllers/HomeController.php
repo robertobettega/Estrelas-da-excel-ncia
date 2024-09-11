@@ -79,8 +79,8 @@ public function atribuirGamificacao()
 
     public function processarDados($usuario, $excelencia)
     {
-        var_dump("Usuário: $usuario, Excelência: $excelencia");
-
+        
+        // var_dump("Usuário: $usuario, Excelência: $excelencia");
         $dados = [
             'ATRIBUTOS_idATRIBUTOS' => $excelencia,
             'USUARIO'               => $usuario,
@@ -90,7 +90,7 @@ public function atribuirGamificacao()
         ];
 
         $insert = Home::insertPin($dados);
-        return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
+        // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
         
     }
 }
