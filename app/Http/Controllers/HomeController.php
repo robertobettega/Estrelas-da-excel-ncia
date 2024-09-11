@@ -61,9 +61,9 @@ public function atribuirGamificacao()
             'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
         ];
 
-        $insert = Home::insertPin($dados);
+        // $insert = Home::insertPin($dados);
 
-        return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
+        // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
     }
 
     /**
@@ -75,5 +75,22 @@ public function atribuirGamificacao()
         $rank = home::getAllExcelenciasUsers();
         return $rank;
 
+    }
+
+    public function processarDados($usuario, $excelencia)
+    {
+        var_dump("Usuário: $usuario, Excelência: $excelencia");
+
+        $dados = [
+            'ATRIBUTOS_idATRIBUTOS' => $excelencia,
+            'USUARIO'               => $usuario,
+            'JUSTIFICATIVA'         => 'Motivo da atribuição',
+            'DEDICATORIA'           => 'Dedicatória especial',
+            'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
+        ];
+
+        $insert = Home::insertPin($dados);
+        return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
+        
     }
 }

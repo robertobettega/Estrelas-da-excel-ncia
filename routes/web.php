@@ -11,9 +11,14 @@ Route::get('/home', [HomeController::class, 'HomePage']);
 
 Route::get('/rank', [HomeController::class, 'Usersexceleciasall']);
 
-route::get('/login/{pedido}', function ($pedido) {
-    return $pedido;
-});
+Route::get('/insert/{usuario}/{excelencia}', [HomeController::class, 'processarDados']);
+
+// route::get('/insert/{pedido}/{excelencia}', function ($pedido, $excelencia) {
+    
+//     return $pedido.$excelencia;
+// });
+
+
 
 Route::get('/login', function () {
     return view('login');

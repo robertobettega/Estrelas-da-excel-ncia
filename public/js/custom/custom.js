@@ -1,19 +1,30 @@
-document.addEventListener('DOMContentLoaded', function() {
 
-    const option_usuario = document.getElementById('caixausuario');
-    const excelencia = document.getElementById("caixaexcelencia");
+var botaosalvar = document.getElementById("btnsalvar");
+botaosalvar.addEventListener("click", function(){
 
-    excelencia.addEventListener('change', function(event1) {
-        const excelenciaselecionada = event1.target.value;
-        console.log(excelenciaselecionada);
-    });
+    const option_usuario = document.getElementById('caixausuario').value;
+    const excelencia = document.getElementById("caixaexcelencia").value;
 
-    option_usuario.addEventListener('change', function(event) {
-        const usuarioselecionado = event.target.value;
-        console.log(usuarioselecionado);
+        console.log(option_usuario);
+        console.log(excelencia);
 
-        // window.alert(usuarioselecionado);
+        $.ajax({
+            url: `/insert/${option_usuario}/${excelencia}`,
+            method: 'GET',
+            data: {
+                option_usuario: option_usuario,
+                excelencia: excelencia,
+            },
+            success: function (response) {
+                // console.log("AJAX está enviando");
+                window.location.href = `/insert/'${option_usuario}/${excelencia}`;
+            },
+            error: function (error) {
+                console.log('Erro na solicitação AJAX:', error);
+            }
+        });
+
         // window.location.href = `login/${usuarioselecionado}`;
         
-    });
+        // console.log("Você clicou no botão");
 });

@@ -81,10 +81,10 @@
                         <label>Usuário:</label>
                         <div class="col-8 pt-8">
                             {{-- CAIXA DE OPÇÕES QUE PEGA OS USUÁRIOS DO BANCO --}}
-                            <select class="col form-select" aria-label="Selecione o Usuário">
+                            <select class="col form-select" aria-label="Selecione o Usuário" id="caixausuario">
                                 <option selected> Adicione o usuário</option>
                                 @foreach ($users as $usuarios)
-                                    <option>
+                                    <option value="{{ $usuarios->id }}">
                                         {{ $usuarios->nome }} {{ $usuarios->sobrenome }} {{ $usuarios->matricula }}
                                         ({{ $usuarios->id }})
                                     </option>
@@ -95,7 +95,8 @@
                         <label>Excelencia:</label>
                         <div class="col-8 pt-8">
                             {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
-                            <select class="col form-select" aria-label="Selecione o Usuário">
+
+                            <select class="col form-select" aria-label="Selecione o Usuário" id="caixaexcelencia">
                                 <option selected>Selecione a excelencia</option>
                                 @foreach ($excelencias_opcoes as $opcoes)
                                     <option value="{{ $opcoes->id }}">
@@ -124,7 +125,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="entrar-navbar"><b>SALVAR<b></button>
+                    <button type="button" class="entrar-navbar" id="btnsalvar"><b>SALVAR<b></button>
                 </div>
             </div>
         </div>
