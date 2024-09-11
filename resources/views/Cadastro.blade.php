@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap">
     <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -58,7 +58,7 @@ html,body{
 
 <main>
 
-<div class="container">
+<div class="container mb-5">
     <div class="input-container">
         <input type="text" class="input-with-icon" placeholder="Usuário">
     </div>
@@ -75,9 +75,10 @@ html,body{
         </div>
     </div>
 
-    <button class="cadastrar">CADASTRAR</button>
+    <button id="register-button" class="cadastrar">CADASTRAR</button>
    
 
+</div>
 </div>
 
 
@@ -90,6 +91,7 @@ html,body{
 <script>document.addEventListener('DOMContentLoaded', function () {
     const passwordField = document.getElementById('password-field');
     const togglePassword = document.getElementById('toggle-password');
+    const registerButton = document.getElementById('register-button');
 
     togglePassword.addEventListener('click', function () {
             // Alterna entre mostrar e esconder a senha
@@ -101,6 +103,11 @@ html,body{
                 togglePassword.src = '{{ asset('images/Icone Olho Fechado.png') }}'; // Atualiza para ícone de olho aberto
         }
     });
+
+    registerButton.addEventListener('click', function () {
+            // Redireciona para a página de aguardando aprovação
+            window.location.href = '{{ route('aguardando.aprovacao') }}'; // Use a rota nomeada
+        });
 });
     </script>
 </body>

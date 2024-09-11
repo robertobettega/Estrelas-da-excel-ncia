@@ -170,3 +170,37 @@ height: 2px;
 .input-container:last-child {
     margin-bottom: 0; /* Remove o espaçamento inferior do último container, se desejado */
 }
+
+.voltar{
+    background-color: #1C2C5C;
+    color: #FFFFFF;
+    text-decoration: none;
+    width: 13em;
+    border-radius: 5%;
+    padding: 0.5rem;
+}
+
+/* minhas estatisticas */
+.custom-navbar {
+    background-color: #f8f9fa;
+    padding: 5px; /* Ajuste o padding para reduzir o espaço interno do navbar */
+}
+.logo2 {
+    height: 50px;
+}
+.content-container {
+    margin-bottom: 550px; /* Reduz a margem superior para aproximar o conteúdo do navbar */
+    text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+.content-container h2 {
+    margin-bottom: 1px; /* Espaço entre o título e a linha */
+}
+.content-container img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.frase {
+    margin-top: 40px; /* Adiciona um espaço acima da frase */
+}

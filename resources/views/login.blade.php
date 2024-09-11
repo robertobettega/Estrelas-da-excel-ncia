@@ -41,7 +41,7 @@ html,body{
     <img class="logo img-fluid" src="{{ asset('images/Prestreza.png') }}" alt="Prestreza">
     <img class="logo img-fluid" src="{{ asset('images/Inovação.png') }}" alt="Inovação">
     <img class="logo img-fluid" src="{{ asset('images/Segurança.png') }}" alt="Segurança">
-</div>
+    </div>
 
 <div>
     <h2>Consolidando nossa excelência</h2>
