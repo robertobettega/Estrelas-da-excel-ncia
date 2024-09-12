@@ -77,12 +77,14 @@ class home extends Model
             GROUP BY USUARIO, ATRIBUTOS_idATRIBUTOS
         )
         SELECT
-            USUARIO,
+            concat(cs.nome, ' ', cs.sobrenome) as USUARIO,
             ATRIBUTOS_idATRIBUTOS,
             count_valor,
             rankvalor as posicoes
-        FROM rankusuarios
-        WHERE rankvalor <= 3 and ATRIBUTOS_idATRIBUTOS = $excelencia;
+        FROM rankusuarios AS usu
+		inner join centralservicos.usuario as cs ON cs.id = usu.USUARIO
+        WHERE rankvalor <= 3 and ATRIBUTOS_idATRIBUTOS = $excelencia
+        order by posicoes asc;
     ";
 
     
@@ -90,6 +92,11 @@ class home extends Model
     return $dadosMySql;
     }
 
+
+    /**
+     * 
+     * Método usado para realizar inserts das atribuições
+     */
     public static function insertPin($dados)
     {
         return DB::table('estrelaexcelencia.pin')->insert([

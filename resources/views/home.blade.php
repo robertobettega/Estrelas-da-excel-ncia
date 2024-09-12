@@ -44,7 +44,8 @@
 
     <div class="d-flex flex-wrap text-center justify-content-center" style="margin: 15px">
 
-        <div>
+        @include('assets.cards-excelencia')
+        {{-- <div>
             <img src="imagens/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Hospitalidade"
                 data-bs-toggle="modal" data-bs-target="#AvaliacaoModal">
             <div>Hospitalidade</div>
@@ -63,7 +64,7 @@
             <img src="imagens/Segurança.png" style="width: 160px; margin: 15px" alt="Segurança" data-bs-toggle="modal"
                 data-bs-target="#AvaliacaoModal">
             <div>Segurança</div>
-        </div>
+        </div> --}}
     </div>
 
     <div class="modal fade" id="AvaliacaoModal" tabindex="-1" aria-labelledby="AvaliacaoModalLabel" aria-hidden="true">
@@ -99,7 +100,7 @@
                             {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
 
                             <select class="col form-select" aria-label="Selecione o Usuário" id="caixaexcelencia">
-                                <option selected>Selecione a excelencia</option>
+                                <option selected >Selecione a excelencia</option>
                                 @foreach ($excelencias_opcoes as $opcoes)
                                     <option value="{{ $opcoes->id }}">
                                         {{ $opcoes->DESCRICAO }}
