@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +16,16 @@
 <body>
     <nav class="navbar">
         <div class="container-fluid">
-            <div>
-                <img src="http://10.1.2.110:80/centralservicos/resources/img/central-servicos.png"
-                    alt="Hospital Rio Grande" style="width: 160px">
-            </div>
+            <a href="home">
+                <img src="images/Logo Hospital Rio Grande.png" class="logo2" alt="Hospital Rio Grande">
+            </a>
             <div class="dropdown">
                 <button class="entrar-navbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Roberto Bettega <i class="bi bi-person-fill"></i>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="cadastro">Meus dados</a></li>
-                    <li><a class="dropdown-item" href="#">Minhas estrelas</a></li>
+                    <li><a class="dropdown-item" href="Cadastro">Meus dados</a></li>
+                    <li><a class="dropdown-item" href="minhasestatisticas">Minhas estrelas</a></li>
                     <li><a class="dropdown-item" href="#">Ajuda</a></li>
                     <li><a class="dropdown-item" href="login">Sair</a></li>
                 </ul>

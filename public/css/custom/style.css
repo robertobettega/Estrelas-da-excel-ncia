@@ -1,7 +1,3 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
 
 body {
     background-color: rgba(249, 244, 245, 0.95);
@@ -30,7 +26,6 @@ header {
 
 .h12 {
     font-size: 40px;
-    font-family: 'Crimson Text', serif;
     color: #13743C;
 }
 
@@ -40,7 +35,6 @@ header {
 }
 
 h2 {
-    font-family: 'Crimson Text', serif;
     color: #1C2C5C;
 
 }
@@ -228,27 +222,15 @@ height: 2px;
     padding: 0.5rem;
 }
 
-/* minhas estatisticas */
-.custom-navbar {
-    background-color: #f8f9fa;
-    padding: 5px; /* Ajuste o padding para reduzir o espaço interno do navbar */
-}
-.logo2 {
-    height: 50px;
-}
-.content-container {
-    margin-bottom: 550px; /* Reduz a margem superior para aproximar o conteúdo do navbar */
-    text-align: center; /* Centraliza o texto horizontalmente */
+.img-estat{
+    width:50px; 
+    height:50px; 
+    margin: 15px;
 }
 
-.content-container h2 {
-    margin-bottom: 1px; /* Espaço entre o título e a linha */
-}
-.content-container img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
-    height: auto; /* Mantém a proporção da imagem */
-}
-
-.frase {
-    margin-top: 40px; /* Adiciona um espaço acima da frase */
+.card-estatistica{
+    background: linear-gradient(to left, #1C2C5C, #13743C);
+    color: #FFFFFF;
+    font-size: 24px;
+    margin: 15px;
 }

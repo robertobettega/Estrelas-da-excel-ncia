@@ -26,12 +26,16 @@ Route::get('/Cadastro', function () {
     return view('cadastro');
 });
 
+Route::get('/minhasestatisticas', function () {
+    return view('minhasestatisticas');
+});
+
 Route::get('/aguardandoaprovacao', function () {
     return view('aguardandoaprovacao'); // Certifique-se de que a view existe
 })->name('aguardando.aprovacao');
 
 
 // Nova controller Admin caso o RH solicite ações que só eles podem vizualizar ou realizar
-Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/minhasestatisticas', [AdminController::class, 'index']);
+// Route::get('/admin', [AdminController::class, 'index']);
+// Route::get('/minhasestatisticas', [AdminController::class, 'index']);
 
