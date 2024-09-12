@@ -21,16 +21,13 @@
                 <img src="http://10.1.2.110:80/centralservicos/resources/img/central-servicos.png"
                     alt="Hospital Rio Grande" style="width: 160px">
             </div>
-            <div>
-                <img src="imagens/Logo estrelas da excelencia.png" alt="Estrelas da Excelência" style="width: 160px">
-            </div>
             <div class="dropdown">
                 <button class="entrar-navbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Roberto Bettega <i class="bi bi-person-fill"></i>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="Cadastro">Meus dados</a></li>
-                    <li><a class="dropdown-item" href="#">Ouvidoria</a></li>
+                    <li><a class="dropdown-item" href="cadastro">Meus dados</a></li>
+                    <li><a class="dropdown-item" href="#">Minhas estrelas</a></li>
                     <li><a class="dropdown-item" href="#">Ajuda</a></li>
                     <li><a class="dropdown-item" href="login">Sair</a></li>
                 </ul>
@@ -38,11 +35,14 @@
         </div>
     </nav>
     <div class="container-fluid text-center">
+        <div>
+            <img src="imagens/Logo estrelas da excelencia.png" alt="Estrelas da Excelência" style="width: 260px">
+        </div>
         <h5>Dedique um pin para um colaborador!</h5>
         <img src="{{ asset('images/Divisória Degradê (5).png') }}" alt="">
     </div>
 
-    <div class="container-fluid text-center justify-content-center" style="display: flex; margin: 15px">
+    <div class="d-flex flex-wrap text-center justify-content-center" style="margin: 15px">
 
         <div>
             <img src="imagens/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Hospitalidade"
@@ -70,9 +70,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <div>
                     <img class="logo img-fluid" src="{{ asset('images/Logo Hospital Rio Grande.png') }}"
-                        style="width: 30px" alt="Logo">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> Dedicar pin!</h1>
+                        style="width: 35px" alt="Logo">
+                    </div>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin 10px"> Dedicar pin!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -107,18 +109,13 @@
                             </select>
                         </div>
 
-                        <label>Estrelas</label>
-                        <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">1 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">2 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">4 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">5 star</label>
+                        <div>
+                            <label>Justificativa:</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                        <div>
+                            <label>Dedicatória:</label>
+                            <textarea class="form-control"></textarea>
                         </div>
 
                     </div>
@@ -136,10 +133,7 @@
 
         <div class="text-center">
             <h4><i class="bi bi-star-fill"></i> Estrelas da excelência</h4>
-            <?php
-            $hoje = date('d/m/Y');
-            ?>
-            <h5> Destaques <?php echo $hoje ?></h5>
+            <h5><i class="bi bi-star-fill"></i> Destaques do mês</h5>
         </div>
 
         <div class="container-fluid row justify-content-center">
