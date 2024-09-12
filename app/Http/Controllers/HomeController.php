@@ -14,10 +14,7 @@ class HomeController extends Controller
     // // PEGANDO AS EXCELENCIAS
     $excelencias_opcoes = home::GetQualidades();
 
-    // //PEGANDO AS SUB-EXCELÊNCIAS
-    $sub_excelencias = home::GetAllAtributes();
-
-    // //USUÁRIOS DA CAIXA DE SELECT
+    //USUÁRIOS DA CAIXA DE SELECT
     $users = home::GetAllUsers();
 
     // VALORES NÚMERICOS DAS EXCELENCIAS DENTRO DO BANCO, EM QUE SÃO OS SEUS ID'S EM "QUALIDADES"
@@ -34,7 +31,6 @@ class HomeController extends Controller
 
     // ARMAZENANDO EM APENAS 1 VARIAVEL PARA SER ENCAMINHADA PARA O VIEW
     $data = [
-        "excelencias"=>$sub_excelencias,
         "users"=>$users,
         "excelencias_opcoes"=>$excelencias_opcoes,
         "hospitalidade_rank" => $hospitalidade_rank,
@@ -50,24 +46,24 @@ class HomeController extends Controller
     // return $users;
 }
 
-public function atribuirGamificacao()
-    {
-        $campo1 = 1;
-        $campo2 = 2;
-        $campo3 = 3;
+// public function atribuirGamificacao()
+//     {
+//         $campo1 = 1;
+//         $campo2 = 2;
+//         $campo3 = 3;
 
-        $dados = [
-            'ATRIBUTOS_idATRIBUTOS' => $campo1,
-            'USUARIO'               => 'user123',
-            'JUSTIFICATIVA'         => 'Motivo da atribuição',
-            'DEDICATORIA'           => 'Dedicatória especial',
-            'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
-        ];
+//         $dados = [
+//             'ATRIBUTOS_idATRIBUTOS' => $campo1,
+//             'USUARIO'               => 'user123',
+//             'JUSTIFICATIVA'         => 'Motivo da atribuição',
+//             'DEDICATORIA'           => 'Dedicatória especial',
+//             'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
+//         ];
 
-        $insert = Home::insertPin($dados);
-        return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
+//         // $insert = Home::insertPin($dados);
+//         // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
         
-    }
+//     }
 
     /**
      * 
@@ -85,7 +81,7 @@ public function atribuirGamificacao()
         
         // var_dump("Usuário: $usuario, Excelência: $excelencia");
         $dados = [
-            'ATRIBUTOS_idATRIBUTOS' => $excelencia,
+            'ID_QUALIDADE' => $excelencia,
             'USUARIO'               => $usuario,
             'JUSTIFICATIVA'         => 'Motivo da atribuição',
             'DEDICATORIA'           => 'Dedicatória especial',

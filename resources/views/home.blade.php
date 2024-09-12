@@ -49,21 +49,6 @@
             <img src="imagens/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Hospitalidade"
                 data-bs-toggle="modal" data-bs-target="#AvaliacaoModal">
             <div>Hospitalidade</div>
-        </div>
-        <div>
-            <img src="imagens/Prestreza.png" style="width: 160px; margin: 15px" alt="Prestreza" data-bs-toggle="modal"
-                data-bs-target="#AvaliacaoModal">
-            <div>Prestreza</div>
-        </div>
-        <div>
-            <img src="imagens/Inovação.png" style="width: 160px; margin: 15px" alt="Inovação" data-bs-toggle="modal"
-                data-bs-target="#AvaliacaoModal">
-            <div>Inovação</div>
-        </div>
-        <div>
-            <img src="imagens/Segurança.png" style="width: 160px; margin: 15px" alt="Segurança" data-bs-toggle="modal"
-                data-bs-target="#AvaliacaoModal">
-            <div>Segurança</div>
         </div> --}}
     </div>
 
@@ -88,7 +73,8 @@
                                 <option selected> Adicione o usuário</option>
                                 @foreach ($users as $usuarios)
                                     <option value="{{ $usuarios->id }}">
-                                        {{ $usuarios->nome }} {{ $usuarios->sobrenome }} {{ $usuarios->matricula }}
+                                        {{ $usuarios->nome }} {{ $usuarios->sobrenome }} 
+                                        {{ $usuarios->matricula }}
                                         ({{ $usuarios->id }})
                                     </option>
                                 @endforeach
@@ -104,7 +90,7 @@
                                 @foreach ($excelencias_opcoes as $opcoes)
                                     <option value="{{ $opcoes->id }}">
                                         {{ $opcoes->DESCRICAO }}
-                                        ID:({{ $opcoes->id }})
+                                        {{-- ID:({{ $opcoes->id }}) --}}
                                     </option>
                                 @endforeach
                             </select>

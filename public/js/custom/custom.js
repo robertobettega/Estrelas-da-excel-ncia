@@ -16,7 +16,7 @@ botaosalvar.addEventListener("click", function(){
                 excelencia: excelencia,
             },
             success: function (response) {
-                // console.log("AJAX está enviando");
+                console.log("AJAX está enviando");
                 // window.location.href = `/insert/'${option_usuario}/${excelencia}`;
             },
             error: function (error) {
