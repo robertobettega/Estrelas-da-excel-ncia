@@ -40,12 +40,12 @@
             <h1 class="h12">EXCELÊNCIA</h1>
         </div>
 
-    <div class="image-container">
-    <img class="logo img-fluid" src="{{ asset('images/Hospitalidade.png') }}" alt="Hospitalidade">
-    <img class="logo img-fluid" src="{{ asset('images/Prestreza.png') }}" alt="Prestreza">
-    <img class="logo img-fluid" src="{{ asset('images/Inovação.png') }}" alt="Inovação">
-    <img class="logo img-fluid" src="{{ asset('images/Segurança.png') }}" alt="Segurança">
-    </div>
+        <div class="image-container">
+            <img class="logo img-fluid" src="{{ asset('images/Hospitalidade.png') }}" alt="Hospitalidade">
+            <img class="logo img-fluid" src="{{ asset('images/Prestreza.png') }}" alt="Prestreza">
+            <img class="logo img-fluid" src="{{ asset('images/Inovação.png') }}" alt="Inovação">
+            <img class="logo img-fluid" src="{{ asset('images/Segurança.png') }}" alt="Segurança">
+        </div>
 
         <div>
             <h2>Consolidando nossa excelência</h2>
