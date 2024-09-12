@@ -22,7 +22,7 @@ Route::get('/teste', [HomeController::class, 'renderCardExcelencias']);
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/Cadastro', function () {
+Route::get('/cadastro', function () {
     return view('cadastro');
 });
 

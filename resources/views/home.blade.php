@@ -42,15 +42,22 @@
         <img src="{{ asset('images/Divisória Degradê (5).png') }}" alt="">
     </div>
 
-    <div class="container-fluid text-center justify-content-center" style="display: flex; margin: 15px">
-
+    
+    <div class="container-fluid">
+    <div class="d-flex flex-wrap justify-content-center">
+        
+        <!-- Inclua seu componente de cards aqui -->
         @include('assets.cards-excelencia')
+
         {{-- <div>
             <img src="imagens/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Hospitalidade"
                 data-bs-toggle="modal" data-bs-target="#AvaliacaoModal">
             <div>Hospitalidade</div>
         </div> --}}
     </div>
+</div>
+
+
 
     <div class="modal fade" id="AvaliacaoModal" tabindex="-1" aria-labelledby="AvaliacaoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
