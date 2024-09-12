@@ -92,6 +92,11 @@ class home extends Model
     return $dadosMySql;
     }
 
+
+    /**
+     * 
+     * Método usado para realizar inserts das atribuições
+     */
     public static function insertPin($dados)
     {
         return DB::table('estrelaexcelencia.pin')->insert([

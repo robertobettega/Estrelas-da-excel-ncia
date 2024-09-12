@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\home;
+use App\Models\admin;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -62,8 +63,8 @@ public function atribuirGamificacao()
         ];
 
         // $insert = Home::insertPin($dados);
-
         // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
+        
     }
 
     /**
@@ -77,7 +78,7 @@ public function atribuirGamificacao()
 
     }
 
-    public function processarDados($usuario, $excelencia)
+    public function insertDados($usuario, $excelencia)
     {
         
         // var_dump("Usuário: $usuario, Excelência: $excelencia");

@@ -28,6 +28,7 @@
     <h4 class="frase">
         “Toda conquista, um dia, começou como <br> um sonho e uma ideia”
     </h4>
+    <p>frase clichê é essa kk</p>
 </div>
 
 <!-- <div class="container select-container">

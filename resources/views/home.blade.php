@@ -97,7 +97,7 @@
                             {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
 
                             <select class="col form-select" aria-label="Selecione o Usuário" id="caixaexcelencia">
-                                <option selected>Selecione a excelencia</option>
+                                <option selected >Selecione a excelencia</option>
                                 @foreach ($excelencias_opcoes as $opcoes)
                                     <option value="{{ $opcoes->id }}">
                                         {{ $opcoes->DESCRICAO }}
