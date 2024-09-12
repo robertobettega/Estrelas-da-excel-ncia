@@ -27,4 +27,13 @@ Route::get('/cadastro', function () {
     return view('cadastro');
 });
 
+Route::get('/aguardandoaprovacao', function () {
+    return view('aguardandoaprovacao'); // Certifique-se de que a view existe
+})->name('aguardando.aprovacao');
+
+Route::get('/minhasestatisticas', function () {
+    return view('minhasestatisticas');
+});
+
+
 Route::get('/insert', [HomeController::class, 'atribuirGamificacao']);
