@@ -1,180 +1,81 @@
+-- Active: 1726136413699@@localhost@3306@estrelaexcelencia
+DROP TABLE IF EXISTS `qualidade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `qualidade` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `DESCRICAO` varchar(45) NOT NULL,
+  `STATUS` varchar(1) NOT NULL,
+  `ICONES` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- ARQUIVO DESTINA PARA QUEM QUISER: 
---  1.IMPLANTAR O BANCO DENTRO DA PRÓPRIA MAQUINA (LOCAL)
---  2.FAZER INSERTS DE UM JEITO MAIS SIMPLES PARA TESTES
+--
+-- Dumping data for table `qualidade`
+--
 
---phpMyAdmin SQL Dump
--- version 5.2.0
--- Host: 127.0.0.1
--- Tempo de geração: 09-Set-2024 às 17:13
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.1.12
+LOCK TABLES `qualidade` WRITE;
+/*!40000 ALTER TABLE `qualidade` DISABLE KEYS */;
+INSERT INTO `qualidade` VALUES (1,'Hospitalidade','A','imagens/Hospitalidade.png'),(2,'Presteza','A','imagens/Prestreza.png'),(3,'Inovação','A','imagens/Inovação.png'),(4,'Segurança','A','imagens/Segurança.png'),(5,'Batman','A','imagens/batman .png');
+/*!40000 ALTER TABLE `qualidade` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+--
+-- Host: localhost    Database: estrelaexcelencia
+-- ------------------------------------------------------
+-- Server version	5.5.5-10.4.27-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Banco de dados: `estrelasexcelencia`
+-- Table structure for table `pin`
 --
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `atributos`
---
-CREATE DATABASE  IF NOT EXISTS `estrelaexcelencia` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `estrelaexcelencia`;
-
-CREATE TABLE `atributos` (
-  `id` int(11) NOT NULL,
-  `ID_QUALIDADE` int(11) NOT NULL,
-  `DESCRICAO` varchar(45) NOT NULL,
-  `STATUS` varchar(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `atributos`
---
-
-INSERT INTO `atributos` (`id`, `ID_QUALIDADE`, `DESCRICAO`, `STATUS`) VALUES
-(1, 1, 'Respeito', 'A'),
-(2, 2, 'Pontualidade', 'A'),
-(3, 3, 'Proatividade', 'A'),
-(4, 4, 'Comunicação', 'A');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `pin`
---
-
+DROP TABLE IF EXISTS `pin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pin` (
-  `id` int(11) NOT NULL,
-  `ATRIBUTOS_idATRIBUTOS` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_QUALIDADE` int(11) NOT NULL,
   `USUARIO` varchar(10) NOT NULL,
   `JUSTIFICATIVA` varchar(150) NOT NULL,
   `DEDICATORIA` varchar(150) NOT NULL,
-  `DATA_ATRIBUICAO` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `DATA_ATRIBUICAO` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk__QUALIDADE_idx` (`ID_QUALIDADE`),
+  CONSTRAINT `fk__QUALIDADE` FOREIGN KEY (`ID_QUALIDADE`) REFERENCES `qualidade` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Extraindo dados da tabela `pin`
+-- Dumping data for table `pin`
 --
 
-INSERT INTO `pin` (`id`, `ATRIBUTOS_idATRIBUTOS`, `USUARIO`, `JUSTIFICATIVA`, `DEDICATORIA`, `DATA_ATRIBUICAO`) VALUES
-(1, 1, 'Usuario1', 'Justificativa para Respeito', 'Dedicatoria para Respeito', '2024-09-09 12:13:38'),
-(2, 2, 'Usuario2', 'Justificativa para Pontualidade', 'Dedicatoria para Pontualidade', '2024-09-09 12:13:38'),
-(3, 3, 'Usuario3', 'Justificativa para Proatividade', 'Dedicatoria para Proatividade', '2024-09-09 12:13:38'),
-(4, 4, 'Usuario4', 'Justificativa para Comunicação', 'Dedicatoria para Comunicação', '2024-09-09 12:13:38');
+LOCK TABLES `pin` WRITE;
+/*!40000 ALTER TABLE `pin` DISABLE KEYS */;
+INSERT INTO `pin` VALUES (16,2,'8','Motivo da atribuição','Dedicatória especial','2024-09-12 10:34:32'),(17,1,'27','Motivo da atribuição','Dedicatória especial','2024-09-12 10:36:25'),(18,3,'33','Motivo da atribuição','Dedicatória especial','2024-09-12 10:36:30'),(19,3,'33','Motivo da atribuição','Dedicatória especial','2024-09-12 10:36:31'),(20,1,'27','Motivo da atribuição','Dedicatória especial','2024-09-12 10:43:16'),(21,1,'27','Motivo da atribuição','Dedicatória especial','2024-09-12 10:43:17'),(22,2,'8','Motivo da atribuição','Dedicatória especial','2024-09-12 10:46:05'),(23,2,'8','Motivo da atribuição','Dedicatória especial','2024-09-12 10:46:06'),(24,2,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 10:46:48'),(25,2,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 10:46:48'),(26,2,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 10:46:48'),(27,2,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 10:46:49'),(28,1,'23','Motivo da atribuição','Dedicatória especial','2024-09-12 11:00:16'),(29,1,'23','Motivo da atribuição','Dedicatória especial','2024-09-12 11:00:16'),(30,1,'23','Motivo da atribuição','Dedicatória especial','2024-09-12 11:00:17'),(31,1,'23','Motivo da atribuição','Dedicatória especial','2024-09-12 11:00:17'),(32,4,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 11:03:13'),(33,4,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 11:03:13'),(34,4,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 11:03:13'),(35,4,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 11:03:14'),(36,4,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 11:03:14'),(37,3,'8','Motivo da atribuição','Dedicatória especial','2024-09-12 11:53:26'),(38,1,'17','Motivo da atribuição','Dedicatória especial','2024-09-12 11:53:42'),(39,1,'17','Motivo da atribuição','Dedicatória especial','2024-09-12 11:53:42'),(40,4,'8','Motivo da atribuição','Dedicatória especial','2024-09-12 11:55:09'),(41,4,'8','Motivo da atribuição','Dedicatória especial','2024-09-12 11:55:17'),(42,4,'17','Motivo da atribuição','Dedicatória especial','2024-09-12 11:55:22'),(46,1,'5','Motivo da atribuição','Dedicatória especial','2024-09-12 14:02:37'),(47,2,'7','Motivo da atribuição','Dedicatória especial','2024-09-12 14:05:20'),(49,1,'4','Motivo da atribuição','Dedicatória especial','2024-09-12 14:07:09'),(52,1,'4','Motivo da atribuição','Dedicatória especial','2024-09-12 14:14:07'),(56,3,'7','Motivo da atribuição','Dedicatória especial','2024-09-12 14:40:09'),(59,4,'7','Motivo da atribuição','Dedicatória especial','2024-09-12 14:44:13'),(62,5,'7','Motivo da atribuição','Dedicatória especial','2024-09-12 14:48:08');
+/*!40000 ALTER TABLE `pin` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `qualidade`
---
-
-CREATE TABLE `qualidade` (
-  `id` int(11) NOT NULL,
-  `DESCRICAO` varchar(45) NOT NULL,
-  `STATUS` varchar(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `qualidade`
---
-
-INSERT INTO `qualidade` (`id`, `DESCRICAO`, `STATUS`) VALUES
-(1, 'Hospitalidade', 'A'),
-(2, 'Presteza', 'A'),
-(3, 'Inovação', 'A'),
-(4, 'Segurança', 'A');
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices para tabela `atributos`
---
-ALTER TABLE `atributos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_ATRIBUTOS_QUALIDADE_idx` (`ID_QUALIDADE`);
-
---
--- Índices para tabela `pin`
---
-ALTER TABLE `pin`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk__ATRIBUTOS1_idx` (`ATRIBUTOS_idATRIBUTOS`);
-
---
--- Índices para tabela `qualidade`
---
-ALTER TABLE `qualidade`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `atributos`
---
-ALTER TABLE `atributos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de tabela `pin`
---
-ALTER TABLE `pin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de tabela `qualidade`
---
-ALTER TABLE `qualidade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- Restrições para despejos de tabelas
---
-
---
--- Limitadores para a tabela `atributos`
---
-ALTER TABLE `atributos`
-  ADD CONSTRAINT `fk_ATRIBUTOS_QUALIDADE` FOREIGN KEY (`ID_QUALIDADE`) REFERENCES `qualidade` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `pin`
---
-ALTER TABLE `pin`
-  ADD CONSTRAINT `fk__ATRIBUTOS1` FOREIGN KEY (`ATRIBUTOS_idATRIBUTOS`) REFERENCES `atributos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
-
-INSERT INTO `pin` (`id`, `ATRIBUTOS_idATRIBUTOS`, `USUARIO`, `JUSTIFICATIVA`, `DEDICATORIA`, `DATA_ATRIBUICAO`) VALUES
-(15, 1, 'Usuario5', 'Justificativa para Respeito extra', 'Dedicatoria para Respeito extra', '2024-09-09 14:30:00');
-
-(6, 2, 'Usuario6', 'Justificativa para Pontualidade extra', 'Dedicatoria para Pontualidade extra', '2024-09-09 14:45:00'),
-(7, 3, 'Usuario7', 'Justificativa para Proatividade extra', 'Dedicatoria para Proatividade extra', '2024-09-09 15:00:00'),
-(8, 4, 'Usuario8', 'Justificativa para Comunicação extra', 'Dedicatoria para Comunicação extra', '2024-09-09 15:15:00'),
-(9, 1, 'Usuario9', 'Justificativa adicional para Respeito', 'Dedicatoria adicional para Respeito', '2024-09-09 15:30:00');
-
-INSERT INTO `pin` (`id`, `ATRIBUTOS_idATRIBUTOS`, `USUARIO`, `JUSTIFICATIVA`, `DEDICATORIA`, `DATA_ATRIBUICAO`) VALUES
-(10, 1, 'Usuario1', 'Nova justificativa para Respeito', 'Nova dedicatoria para Respeito', '2024-09-09 16:00:00'),
-(11, 2, 'Usuario2', 'Nova justificativa para Pontualidade', 'Nova dedicatoria para Pontualidade', '2024-09-09 16:15:00'),
-(12, 3, 'Usuario3', 'Nova justificativa para Proatividade', 'Nova dedicatoria para Proatividade', '2024-09-09 16:30:00'),
-(13, 4, 'Usuario4', 'Nova justificativa para Comunicação', 'Nova dedicatoria para Comunicação', '2024-09-09 16:45:00'),
-(14, 1, 'Usuario1', 'Justificativa adicional para Respeito', 'Dedicatoria adicional para Respeito', '2024-09-09 17:00:00');
-
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-09-12 11:51:23

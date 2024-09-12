@@ -26,21 +26,6 @@ class home extends Model
         return $dadosMySql;
     }
 
-    /**
-     * 
-     * Consulta resonsável por puxar todas as atribuições
-     */
-    public static function GetAllAtributes()
-    {
-        
-        $table = "estrelaexcelencia.atributos";
-        $fields = "*";
-        $where = "";
-    
-        $dadosMySql = DB::connection('mysql')->select("SELECT $fields FROM $table");
-        return $dadosMySql;
-
-    }
 
     public static function GetQualidades()
     {
@@ -70,20 +55,20 @@ class home extends Model
         WITH rankusuarios AS (
             SELECT
                 USUARIO,
-                ATRIBUTOS_idATRIBUTOS,
+                ID_QUALIDADE,
                 COUNT(*) AS count_valor,
-                ROW_NUMBER() OVER (PARTITION BY ATRIBUTOS_idATRIBUTOS ORDER BY COUNT(*) DESC) AS rankvalor
+                ROW_NUMBER() OVER (PARTITION BY ID_QUALIDADE ORDER BY COUNT(*) DESC) AS rankvalor
             FROM estrelaexcelencia.pin
-            GROUP BY USUARIO, ATRIBUTOS_idATRIBUTOS
+            GROUP BY USUARIO, ID_QUALIDADE
         )
         SELECT
             concat(cs.nome, ' ', cs.sobrenome) as USUARIO,
-            ATRIBUTOS_idATRIBUTOS,
+            ID_QUALIDADE,
             count_valor,
             rankvalor as posicoes
         FROM rankusuarios AS usu
 		inner join centralservicos.usuario as cs ON cs.id = usu.USUARIO
-        WHERE rankvalor <= 3 and ATRIBUTOS_idATRIBUTOS = $excelencia
+        WHERE rankvalor <= 3 and ID_QUALIDADE = $excelencia
         order by posicoes asc;
     ";
 
@@ -100,7 +85,7 @@ class home extends Model
     public static function insertPin($dados)
     {
         return DB::table('estrelaexcelencia.pin')->insert([
-            'ATRIBUTOS_idATRIBUTOS' => $dados['ATRIBUTOS_idATRIBUTOS'],
+            'ID_QUALIDADE' => $dados['ID_QUALIDADE'],
             'USUARIO'               => $dados['USUARIO'],
             'JUSTIFICATIVA'         => $dados['JUSTIFICATIVA'],
             'DEDICATORIA'           => $dados['DEDICATORIA'],

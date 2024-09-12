@@ -5,8 +5,8 @@ botaosalvar.addEventListener("click", function(){
     const option_usuario = document.getElementById('caixausuario').value;
     const excelencia = document.getElementById("caixaexcelencia").value;
 
-        // console.log(option_usuario);
-        // console.log(excelencia);
+        console.log(option_usuario);
+        console.log(excelencia);
 
         $.ajax({
             url: `/insert/${option_usuario}/${excelencia}`,
