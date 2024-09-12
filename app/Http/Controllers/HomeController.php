@@ -32,7 +32,7 @@ class HomeController extends Controller
     $inovacao_rank = home::getAllExcelenciasUsers($inovacao);
     $seguranca_rank = home::getAllExcelenciasUsers($seguranca);
 
-    ARMAZENANDO EM APENAS 1 VARIAVEL PARA SER ENCAMINHADA PARA O VIEW
+    // ARMAZENANDO EM APENAS 1 VARIAVEL PARA SER ENCAMINHADA PARA O VIEW
     $data = [
         "excelencias"=>$sub_excelencias,
         "users"=>$users,
