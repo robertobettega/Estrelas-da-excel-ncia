@@ -14,6 +14,11 @@ Route::get('/rank', [HomeController::class, 'Usersexceleciasall']);
 
 Route::get('/insert/{usuario}/{excelencia}', [HomeController::class, 'insertDados']);
 
+Route::get('/insert', [HomeController::class, 'atribuirGamificacao']);
+
+Route::get('/teste', [HomeController::class, 'renderCardExcelencias']);
+
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -25,7 +30,6 @@ Route::get('/aguardandoaprovacao', function () {
     return view('aguardandoaprovacao'); // Certifique-se de que a view existe
 })->name('aguardando.aprovacao');
 
-Route::get('/insert', [HomeController::class, 'atribuirGamificacao']);
 
 // Nova controller Admin caso o RH solicite ações que só eles podem vizualizar ou realizar
 Route::get('/admin', [AdminController::class, 'index']);

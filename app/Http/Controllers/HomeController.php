@@ -20,7 +20,6 @@ class HomeController extends Controller
     //USUÁRIOS DA CAIXA DE SELECT
     $users = home::GetAllUsers();
 
-
     // VALORES NÚMERICOS DAS EXCELENCIAS DENTRO DO BANCO, EM QUE SÃO OS SEUS ID'S EM "QUALIDADES"
     $hospitalidade = 1;
     $prestreza = 2;
@@ -42,6 +41,9 @@ class HomeController extends Controller
         "prestreza_rank" => $prestreza_rank,
         "inovacao_rank" => $inovacao_rank,
         "seguranca_rank" => $seguranca_rank,
+
+        //Informações dos cards da caixa de excelencia para renderizar sem precisar repetir 4 vezes na home
+        'excelencias' => $excelencias_opcoes,
     ];
 
     return view('home', $data);
@@ -93,5 +95,22 @@ public function atribuirGamificacao()
         $insert = Home::insertPin($dados);
         // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
         
+    }
+
+
+    /**
+     * 
+     * REALIZANDO UM TESTE PARA EVITAR FICAR CRIANDO HTML REPETITIVOS
+     */
+    public function renderCardExcelencias()
+    {
+
+        $excelencia = Home::GetQualidades();
+
+        $data = [
+            'excelencias' => $excelencia
+        ];
+
+        return view('assets/cards-excelencia', $data)->render();
     }
 }
