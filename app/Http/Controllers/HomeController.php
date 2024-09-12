@@ -46,54 +46,54 @@ class HomeController extends Controller
         'excelencias' => $excelencias_opcoes,
     ];
 
-    // return view('home', $data);
-    // // return $users;
+    return view('home', $data);
+    // return $users;
 }
 
-// public function atribuirGamificacao()
-//     {
-//         $campo1 = 1;
-//         $campo2 = 2;
-//         $campo3 = 3;
+public function atribuirGamificacao()
+    {
+        $campo1 = 1;
+        $campo2 = 2;
+        $campo3 = 3;
 
-//         $dados = [
-//             'ATRIBUTOS_idATRIBUTOS' => $campo1,
-//             'USUARIO'               => 'user123',
-//             'JUSTIFICATIVA'         => 'Motivo da atribuição',
-//             'DEDICATORIA'           => 'Dedicatória especial',
-//             'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
-//         ];
+        $dados = [
+            'ATRIBUTOS_idATRIBUTOS' => $campo1,
+            'USUARIO'               => 'user123',
+            'JUSTIFICATIVA'         => 'Motivo da atribuição',
+            'DEDICATORIA'           => 'Dedicatória especial',
+            'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
+        ];
 
-        // $insert = Home::insertPin($dados);
-        // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
+        $insert = Home::insertPin($dados);
+        return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
         
     }
 
-//     /**
-//      * 
-//      * Metodo usado para puxar todas as Excelencias dos usuarios quando a modal abrir 
-//      */
-//     public function Usersexceleciasall()
-//     {
-//         $rank = home::getAllExcelenciasUsers();
-//         return $rank;
+    /**
+     * 
+     * Metodo usado para puxar todas as Excelencias dos usuarios quando a modal abrir 
+     */
+    public function Usersexceleciasall()
+    {
+        $rank = home::getAllExcelenciasUsers();
+        return $rank;
 
-//     }
+    }
 
     public function insertDados($usuario, $excelencia)
     {
         
-//         // var_dump("Usuário: $usuario, Excelência: $excelencia");
-//         $dados = [
-//             'ATRIBUTOS_idATRIBUTOS' => $excelencia,
-//             'USUARIO'               => $usuario,
-//             'JUSTIFICATIVA'         => 'Motivo da atribuição',
-//             'DEDICATORIA'           => 'Dedicatória especial',
-//             'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
-//         ];
+        // var_dump("Usuário: $usuario, Excelência: $excelencia");
+        $dados = [
+            'ATRIBUTOS_idATRIBUTOS' => $excelencia,
+            'USUARIO'               => $usuario,
+            'JUSTIFICATIVA'         => 'Motivo da atribuição',
+            'DEDICATORIA'           => 'Dedicatória especial',
+            'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
+        ];
 
-//         $insert = Home::insertPin($dados);
-//         // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
+        $insert = Home::insertPin($dados);
+        // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
         
     }
 
