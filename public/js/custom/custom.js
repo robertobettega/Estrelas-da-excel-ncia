@@ -5,8 +5,8 @@ botaosalvar.addEventListener("click", function(){
     const option_usuario = document.getElementById('caixausuario').value;
     const excelencia = document.getElementById("caixaexcelencia").value;
 
-        console.log(option_usuario);
-        console.log(excelencia);
+        // console.log(option_usuario);
+        // console.log(excelencia);
 
         $.ajax({
             url: `/insert/${option_usuario}/${excelencia}`,
@@ -16,7 +16,7 @@ botaosalvar.addEventListener("click", function(){
                 excelencia: excelencia,
             },
             success: function (response) {
-                // console.log("AJAX está enviando");
+                console.log("AJAX está enviando");
                 // window.location.href = `/insert/'${option_usuario}/${excelencia}`;
             },
             error: function (error) {

@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `centralservicos` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `centralservicos`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: 10.1.1.31    Database: centralservicos
+-- Host: localhost    Database: estrelaexcelencia
 -- ------------------------------------------------------
--- Server version	5.5.5-10.3.36-MariaDB-0+deb10u2
+-- Server version	5.5.5-10.4.27-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,31 +16,31 @@ USE `centralservicos`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `paciente`
+-- Table structure for table `atributos`
 --
 
-DROP TABLE IF EXISTS `paciente`;
+DROP TABLE IF EXISTS `atributos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `paciente` (
-  `registro` int(11) NOT NULL,
-  `nome` varchar(200) NOT NULL,
-  `cpf` varchar(15) NOT NULL,
-  `sexo` char(1) NOT NULL,
-  `dthr_nascimento` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `dthr_atualizacao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  PRIMARY KEY (`registro`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `atributos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_QUALIDADE` int(11) NOT NULL,
+  `DESCRICAO` varchar(45) NOT NULL,
+  `STATUS` varchar(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_ATRIBUTOS_QUALIDADE_idx` (`ID_QUALIDADE`),
+  CONSTRAINT `fk_ATRIBUTOS_QUALIDADE` FOREIGN KEY (`ID_QUALIDADE`) REFERENCES `qualidade` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `paciente`
+-- Dumping data for table `atributos`
 --
 
-LOCK TABLES `paciente` WRITE;
-/*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-INSERT INTO `paciente` VALUES (1234,'Teste','1111','M','2002-11-04 18:09:00','2021-11-22 18:08:53');
-/*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
+LOCK TABLES `atributos` WRITE;
+/*!40000 ALTER TABLE `atributos` DISABLE KEYS */;
+INSERT INTO `atributos` VALUES (1,1,'Respeito','A'),(2,2,'Pontualidade','A'),(3,3,'Proatividade','A'),(4,4,'Comunicação','A'),(5,5,'','A'),(6,5,'','A');
+/*!40000 ALTER TABLE `atributos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-09 12:36:31
+-- Dump completed on 2024-09-12 11:51:23
