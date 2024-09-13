@@ -84,11 +84,11 @@
 
                         <div>
                             <label>Justificativa:</label>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" id="caixajustificativa"></textarea>
                         </div>
                         <div>
                             <label>Dedicatória:</label>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" id="caixadedicatoria"></textarea>
                         </div>
 
                     </div>

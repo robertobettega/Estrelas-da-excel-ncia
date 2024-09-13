@@ -46,25 +46,6 @@ class HomeController extends Controller
     // return $users;
 }
 
-// public function atribuirGamificacao()
-//     {
-//         $campo1 = 1;
-//         $campo2 = 2;
-//         $campo3 = 3;
-
-//         $dados = [
-//             'ATRIBUTOS_idATRIBUTOS' => $campo1,
-//             'USUARIO'               => 'user123',
-//             'JUSTIFICATIVA'         => 'Motivo da atribuição',
-//             'DEDICATORIA'           => 'Dedicatória especial',
-//             'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
-//         ];
-
-//         // $insert = Home::insertPin($dados);
-//         // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
-        
-//     }
-
     /**
      * 
      * Metodo usado para puxar todas as Excelencias dos usuarios quando a modal abrir 
@@ -76,24 +57,26 @@ class HomeController extends Controller
 
     }
 
-    public function insertDados($usuario, $excelencia)
+    public function insertDados(Request $request)
     {
-        
-        // var_dump("Usuário: $usuario, Excelência: $excelencia");
-        $dados = [
-            'ID_QUALIDADE' => $excelencia,
-            'USUARIO'               => $usuario,
-            'JUSTIFICATIVA'         => 'Motivo da atribuição',
-            'DEDICATORIA'           => 'Dedicatória especial',
-            'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
-        ];
+        try {
 
-        $insert = Home::insertPin($dados);
-        // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
-        
+            $dados = [
+                'ID_QUALIDADE'       => $request->input('excelencia'),
+                'USUARIO'            => $request->input('usuario'),
+                'JUSTIFICATIVA'      => $request->input('justificativa'),
+                'DEDICATORIA'        => $request->input('dedicatoria'),
+                'DATA_ATRIBUICAO'    => now(),
+            ];
+    
+            Home::insertPin($dados);
+    
+            return response()->json(['success' => true, 'message' => 'Dados inseridos com sucesso!']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
-
-
+    
     /**
      * 
      * REALIZANDO UM TESTE PARA EVITAR FICAR CRIANDO HTML REPETITIVOS
