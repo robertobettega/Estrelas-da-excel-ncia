@@ -43,8 +43,8 @@
     <div class="image-container">
     <img class="logo img-fluid" src="{{ asset('images/Hospitalidade.png') }}" alt="Hospitalidade">
     <img class="logo img-fluid" src="{{ asset('images/Prestreza.png') }}" alt="Prestreza">
-    <img class="logo img-fluid" src="{{ asset('images/Inovação.png') }}" alt="Inovação">
-    <img class="logo img-fluid" src="{{ asset('images/Segurança.png') }}" alt="Segurança">
+    <img class="logo img-fluid" src="{{ asset('images/Inovacao.png') }}" alt="Inovação">
+    <img class="logo img-fluid" src="{{ asset('images/Seguranca.png') }}" alt="Segurança">
     </div>
 
         <div>

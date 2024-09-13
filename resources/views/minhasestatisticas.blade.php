@@ -57,7 +57,7 @@
             <div class="card card-estatistica">
                 <div class="d-flex flex-wrap ">
                     <div>
-                        <img src="imagens/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Hospitalidade">
+                        <img src="images/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Hospitalidade">
                         <div><b>Hospitalidade</b></div>
                     </div>
                     <div class="col align-self-center"><b>4</b></div>
@@ -67,7 +67,7 @@
             <div class="card card-estatistica">
                 <div class="d-flex flex-wrap ">
                     <div>
-                        <img src="imagens/Prestreza.png" style="width: 160px; margin: 15px" alt="Prestreza">
+                        <img src="images/Prestreza.png" style="width: 160px; margin: 15px" alt="Prestreza">
                         <div><b>Prestreza</b></div>
                     </div>
                     <div class="col align-self-center"><b>10</b></div>
@@ -77,7 +77,7 @@
             <div class="card card-estatistica">
                 <div class="d-flex flex-wrap ">
                     <div>
-                        <img src="imagens/Inovação.png" style="width: 160px; margin: 15px" alt="Inovação">
+                        <img src="images/Inovação.png" style="width: 160px; margin: 15px" alt="Inovação">
                         <div><b>Inovação</b></div>
                     </div>
                     <div class="col align-self-center"><b>2</b></div>
@@ -87,7 +87,7 @@
             <div class="card card-estatistica">
                 <div class="d-flex flex-wrap ">
                     <div>
-                        <img src="imagens/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Segurança">
+                        <img src="images/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Segurança">
                         <div><b>Segurança</b></div>
                     </div>
                     <div class="col align-self-center"><b>0</b></div>
