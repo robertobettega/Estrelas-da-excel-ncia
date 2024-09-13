@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -13,25 +13,13 @@
     <link rel="stylesheet" href="{{ asset('css\custom\style.css') }}">
 </head>
 
-<body>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <a href="home">
-                <img src="images/Logo Hospital Rio Grande.png" class="logo2" alt="Hospital Rio Grande">
-            </a>
-            <div class="dropdown">
-                <button class="entrar-navbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Roberto Bettega <i class="bi bi-person-fill"></i>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="Cadastro">Meus dados</a></li>
-                    <li><a class="dropdown-item" href="minhasestatisticas">Minhas estrelas</a></li>
-                    <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                    <li><a class="dropdown-item" href="login">Sair</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body> --}}
+    @extends('layouts.layout')
+
+    @section('title', 'Home')
+    
+    @section('content')
+   
     <div class="container-fluid text-center">
         <div>
             <img src="imagens/Logo estrelas da excelencia.png" alt="Estrelas da Excelência" style="width: 260px">
@@ -215,6 +203,13 @@
             </div>
         </div>
     </div>
+    @endsection
+    {{-- <footer class="main-footer" style="margin-left: 0 !important; margin-top: 1em;">
+        <strong>Copyright © 2021 <a href="http://www.hospitalriogrande.com.br/" target="_blank">Hospital Rio Grande</a></strong>. Todos os direitos reservados.
+        <div class="float-right d-none d-sm-inline-block">
+          <b>Versão</b> 0.0.1
+        </div>
+      </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
@@ -224,4 +219,4 @@
     <script src="{{ asset('js\custom\custom.js') }}"></script>
 </body>
 
-</html>
+</html> --}}
