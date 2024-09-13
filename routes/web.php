@@ -12,9 +12,7 @@ Route::get('/home', [HomeController::class, 'HomePage']);
 
 Route::get('/rank', [HomeController::class, 'Usersexceleciasall']);
 
-Route::get('/insert/{usuario}/{excelencia}', [HomeController::class, 'insertDados']);
-
-Route::get('/insert', [HomeController::class, 'atribuirGamificacao']);
+route::post('/insert', [HomeController::class, 'insertDados']);
 
 Route::get('/teste', [HomeController::class, 'renderCardExcelencias']);
 
