@@ -91,7 +91,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="entrar-navbar" id="btnsalvar"><b>SALVAR<b></button>
+                    <button type="button" class="entrar-navbar" id="btnsalvar" onclick="sucesso()" data-bs-dismiss="modal"><b>SALVAR<b></button>
                 </div>
             </div>
         </div>
