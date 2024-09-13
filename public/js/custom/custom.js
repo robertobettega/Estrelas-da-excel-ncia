@@ -10,6 +10,13 @@ botaosalvar.addEventListener("click", function() {
     const justificativa = document.getElementById("caixajustificativa").value;
     const dedicatoria = document.getElementById("caixadedicatoria").value;
 
+    Swal.fire(
+        {
+            text: 'Sucesso ao salvar!',
+            icon: 'success'
+        }
+    )
+
     $.ajax({
         url: `/insert`,
         method: 'POST',
