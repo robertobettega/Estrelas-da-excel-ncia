@@ -234,3 +234,7 @@ height: 2px;
     font-size: 24px;
     margin: 15px;
 }
+.header-avaliacao{
+    background: linear-gradient(to left, #1C2C5C, #13743C);
+    color: #FFFFFF;
+}

@@ -53,12 +53,12 @@
     <div class="modal fade" id="AvaliacaoModal" tabindex="-1" aria-labelledby="AvaliacaoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header header-avaliacao">
                     <div>
-                    <img class="logo img-fluid" src="{{ asset('images/Logo Hospital Rio Grande.png') }}"
-                        style="width: 35px" alt="Logo">
+                    <img src="{{ asset('images/Logo Hospital Rio Grande.png') }}"
+                        style="width: 35px; margin-right: 15px" alt="Logo">
                     </div>
-                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin 10px"> Dedicar pin!</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin 10px">Dedicar pin!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
