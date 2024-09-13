@@ -31,11 +31,7 @@
     <div class="d-flex flex-wrap text-center justify-content-center" style="margin: 15px">
 
         @include('assets.cards-excelencia')
-        {{-- <div>
-            <img src="imagens/Hospitalidade.png" style="width: 160px; margin: 15px" alt="Hospitalidade"
-                data-bs-toggle="modal" data-bs-target="#AvaliacaoModal">
-            <div>Hospitalidade</div>
-        </div> --}}
+
     </div>
 
     <div class="modal fade" id="AvaliacaoModal" tabindex="-1" aria-labelledby="AvaliacaoModalLabel" aria-hidden="true">
@@ -111,112 +107,8 @@
 
         <div class="container-fluid row justify-content-center">
 
-            <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
-                <div class="row g-0">
-                    <div class="col-md-4 text-center">
-                        <img src="imagens/Hospitalidade.png" style="width: 140px" alt="Hospitalidade">
-                        <div>Hospitalidade</div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
+            @include('assets.cards-contagemexcelencias')
 
-                                @foreach ($hospitalidade_rank as $user)
-                                    <li class="list-group-item">
-                                        <b>{{ $user->USUARIO }}</b>
-                                        ({{ $user->count_valor }})
-                                        <span class="badge rounded-pill text-bg-success">{{ $user->posicoes }}°</span>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
-                <div class="row g-0">
-                    <div class="col-md-4 text-center">
-                        <img src="imagens/Prestreza.png" style="width: 140px" alt="Prestreza">
-                        <div>Prestreza</div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                @foreach ($prestreza_rank as $user)
-                                    <li class="list-group-item">
-                                        <b>{{ $user->USUARIO }}</b>
-                                        ({{ $user->count_valor }})
-                                        <span class="badge rounded-pill text-bg-success">{{ $user->posicoes }}°</span>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
-                <div class="row g-0">
-                    <div class="col-md-4 text-center">
-                        <img src="imagens/Inovação.png" style="width: 140px" alt="Inovação">
-                        <div>Inovação</div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                @foreach ($inovacao_rank as $user)
-                                    <li class="list-group-item">
-                                        <b>{{ $user->USUARIO }}</b>
-                                        ({{ $user->count_valor }})
-                                        <span class="badge rounded-pill text-bg-success">{{ $user->posicoes }}°</span>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
-                <div class="row g-0">
-                    <div class="col-md-4 text-center">
-                        <img src="imagens/Segurança.png" style="width: 140px" alt="Segurança">
-                        <div>Segurança</div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-
-                                @foreach ($seguranca_rank as $user)
-                                    <li class="list-group-item">
-                                        <b>{{ $user->USUARIO }}</b>
-                                        ({{ $user->count_valor }})
-                                        <span class="badge rounded-pill text-bg-success">{{ $user->posicoes }}°</span>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     @endsection
-    {{-- <footer class="main-footer" style="margin-left: 0 !important; margin-top: 1em;">
-        <strong>Copyright © 2021 <a href="http://www.hospitalriogrande.com.br/" target="_blank">Hospital Rio Grande</a></strong>. Todos os direitos reservados.
-        <div class="float-right d-none d-sm-inline-block">
-          <b>Versão</b> 0.0.1
-        </div>
-      </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
-    <script src="{{ asset('js\custom\custom.js') }}"></script>
-</body>
-
-</html> --}}

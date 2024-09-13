@@ -14,8 +14,7 @@ Route::get('/rank', [HomeController::class, 'Usersexceleciasall']);
 
 route::post('/insert', [HomeController::class, 'insertDados']);
 
-Route::get('/teste', action: [HomeController::class, 'renderCardExcelencias']);
-
+Route::get('/teste', [HomeController::class, 'renderCardExcelencias']);
 
 Route::get('/login', function () {
     return view('login');
