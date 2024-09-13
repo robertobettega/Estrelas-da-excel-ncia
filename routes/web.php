@@ -16,14 +16,14 @@ Route::get('/insert/{usuario}/{excelencia}', [HomeController::class, 'insertDado
 
 Route::get('/insert', [HomeController::class, 'atribuirGamificacao']);
 
-Route::get('/teste', [HomeController::class, 'renderCardExcelencias']);
+Route::get('/teste', action: [HomeController::class, 'renderCardExcelencias']);
 
 
 Route::get('/login', function () {
     return view('login');
 });
 Route::get('/Cadastro', function () {
-    return view('cadastro');
+    return view('Cadastro');
 });
 
 Route::get('/minhasestatisticas', function () {
