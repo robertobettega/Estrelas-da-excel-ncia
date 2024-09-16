@@ -41,7 +41,7 @@
     <footer style="margin-left: 0 !important; margin-top: 1em;">
         <div>Copyright © 2021 <a href="http://www.hospitalriogrande.com.br/" target="_blank">Hospital Rio Grande</a></div>. Todos os direitos reservados.
         <div class="float-right d-none d-sm-inline-block">
-          <b>Versão</b> 0.0.1
+          Versão 0.0.1
         </div>
       </footer>
 
