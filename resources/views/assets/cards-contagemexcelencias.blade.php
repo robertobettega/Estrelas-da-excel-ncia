@@ -33,7 +33,7 @@
                         {{-- AQUI ESTAMOS SEPARANDO O VALOR DE $USUARIOS (VALORES DO BANCO) NAS COLUNAS PARA CADA DADO NECESSÁRIO DENTRO DA CONSULTA DA MODEL --}}
                         @foreach ($usuarios as $user)
                             <li class="list-group-item">
-                                <b>{{ $user->USUARIO }}</b>
+                                {{ $user->USUARIO }}
                                 ({{ $user->count_valor }})
                                 <span class="badge rounded-pill text-bg-success">{{ $user->posicoes }}°</span>
                             </li>

@@ -90,7 +90,7 @@ input[type="password"] {
 .entrar {
     background: linear-gradient(to right, #1C2C5C, #13743C);
     color: #FFFFFF;
-    width: 280px;
+    width: auto;
     height: 50px;
     border-radius: 15px;
     border: 0px;
