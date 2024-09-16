@@ -12,6 +12,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css\custom\style.css') }}">
+    <link rel="stylesheet" href="https://use.typekit.net/your-project-id.css">
 </head>
 
 <body>
@@ -22,10 +23,10 @@
             </a>
             <div class="dropdown">
                 <button class="entrar-navbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       <div>{{ Auth::user()->name }}</div><i class="bi bi-person-fill"></i>
+                       <div>{{ Auth::user()->name }}<i class="bi bi-person-fill"></i></div>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="Cadastro">Meus dados</a></li>
+                    <li><a class="dropdown-item" href="profile">Meus dados</a></li>
                     <li><a class="dropdown-item" href="minhasestatisticas">Minhas estrelas</a></li>
                     <li><a class="dropdown-item" href="#">Ajuda</a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
