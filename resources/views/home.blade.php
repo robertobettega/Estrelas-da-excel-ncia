@@ -33,6 +33,9 @@
         @include('assets.cards-excelencia')
 
     </div>
+</div>
+
+
 
     <div class="modal fade" id="AvaliacaoModal" tabindex="-1" aria-labelledby="AvaliacaoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
