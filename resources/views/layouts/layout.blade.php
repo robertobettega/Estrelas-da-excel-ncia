@@ -28,7 +28,10 @@
                     <li><a class="dropdown-item" href="Cadastro">Meus dados</a></li>
                     <li><a class="dropdown-item" href="minhasestatisticas">Minhas estrelas</a></li>
                     <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                    <li><a class="dropdown-item" href="dashboard">Sair</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a></li>
                 </ul>
             </div>
         </div>
@@ -39,7 +42,7 @@
     </main>
 
     <footer style="margin-left: 0 !important; margin-top: 1em;">
-        <div>Copyright © 2021 <a href="http://www.hospitalriogrande.com.br/" target="_blank">Hospital Rio Grande</a></div>. Todos os direitos reservados.
+        <div>Copyright © 2024 <a href="http://www.hospitalriogrande.com.br/" target="_blank">Hospital Rio Grande</a></div>. Todos os direitos reservados.
         <div class="float-right d-none d-sm-inline-block">
           Versão 0.0.1
         </div>
