@@ -16,7 +16,7 @@
 <body> --}}
     @extends('layouts.layout')
 
-    @section('title', 'Home')
+    @section('title', 'Home - Estrelas da excelência')
     
     @section('content')
    
