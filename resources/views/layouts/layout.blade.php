@@ -22,7 +22,7 @@
             </a>
             <div class="dropdown">
                 <button class="entrar-navbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       <div>{{ Auth::user()->name }}</div><i class="bi bi-person-fill"></i>
+                       <div>{{ Auth::user()->name }}<i class="bi bi-person-fill"></i></div>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="Cadastro">Meus dados</a></li>

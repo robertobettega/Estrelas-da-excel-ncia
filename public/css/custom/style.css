@@ -255,12 +255,3 @@ height: 2px;
     padding: 0;              /* Remove o padding padrão dos títulos h1 */
 }
 
-#email{
-    background-color: #000000;
-}
-
-.logo-login {
-    max-width: 10px; /* Ajuste o tamanho conforme necessário */
-    margin: 0 auto;   /* Centraliza o logotipo horizontalmente */
-    display: block;   /* Faz com que o logotipo se comporte como um bloco */
-}
