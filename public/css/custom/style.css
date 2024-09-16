@@ -238,3 +238,29 @@ height: 2px;
     background: linear-gradient(to left, #1C2C5C, #13743C);
     color: #FFFFFF;
 }
+
+
+/* pag login breeze */
+
+.logologin{
+    display: block;       /* Faz com que a imagem seja exibida como um bloco */
+    max-width: 80px;     /* Ajusta o tamanho máximo da imagem */
+    height: auto;         /* Mantém a proporção da imagem */
+    margin: 0 auto;
+}
+
+
+.h1 {
+    margin: 0;               /* Remove a margem padrão dos títulos h1 */
+    padding: 0;              /* Remove o padding padrão dos títulos h1 */
+}
+
+#email{
+    background-color: #000000;
+}
+
+.logo-login {
+    max-width: 10px; /* Ajuste o tamanho conforme necessário */
+    margin: 0 auto;   /* Centraliza o logotipo horizontalmente */
+    display: block;   /* Faz com que o logotipo se comporte como um bloco */
+}
