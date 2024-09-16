@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -22,19 +22,19 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'HomePage'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/rank', [HomeController::class, 'Usersexceleciasall']);
+Route::get('/rank', [HomeController::class, 'Usersexceleciasall'])->middleware(['auth', 'verified'])->name('dashboard');
 
-route::post('/insert', [HomeController::class, 'insertDados']);
+route::post('/insert', [HomeController::class, 'insertDados'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/teste', [HomeController::class, 'renderCardExcelencias']);
+Route::get('/teste', [HomeController::class, 'renderCardExcelencias'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/login', function () {
     return view('login');
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/Cadastro', function () {
     return view('Cadastro');
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 // Route::get('/minhasestatisticas', function () {
 //     return view('minhasestatisticas');
@@ -42,13 +42,13 @@ Route::get('/Cadastro', function () {
 
 Route::get('/aguardandoaprovacao', function () {
     return view('aguardandoaprovacao'); // Certifique-se de que a view existe
-})->name('aguardando.aprovacao');
+})->name('aguardando.aprovacao')->middleware(['auth', 'verified'])->name('dashboard');
 
 
 // Nova controller Admin caso o RH solicite ações que só eles podem vizualizar ou realizar
 
 // Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/minhasestatisticas', [AdminController::class, 'HomePage']);
+Route::get('/minhasestatisticas', [AdminController::class, 'HomePage'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
 

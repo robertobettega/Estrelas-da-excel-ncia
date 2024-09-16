@@ -28,7 +28,7 @@
                     <li><a class="dropdown-item" href="Cadastro">Meus dados</a></li>
                     <li><a class="dropdown-item" href="minhasestatisticas">Minhas estrelas</a></li>
                     <li><a class="dropdown-item" href="#">Ajuda</a></li>
-                    <li><a class="dropdown-item" href="login">Sair</a></li>
+                    <li><a class="dropdown-item" href="dashboard">Sair</a></li>
                 </ul>
             </div>
         </div>
