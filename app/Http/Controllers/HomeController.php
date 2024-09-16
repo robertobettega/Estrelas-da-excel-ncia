@@ -9,10 +9,17 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
+    /**
+     * 
+     * !!!!! COMENTÁRIO PARA LEMBRAR!!!!
+     * ESSA FUNÇÃO PODE SER ADAPTADA PARA FUNCIONAR APENAS COM O INSERT DE UMA NOVA QUALIFICAÇÃO NO DB, BUSCAR FAZER ISSO QUANDO FOR IMPLANTAR EM UM SERVIDOR
+     */
     public function HomePage()
     {
         $excelencias_opcoes = home::GetQualidades();
-    
+
+        // $excelencias = array_column($excelencias_opcoes, 'nome_coluna_desejada');
+
         $excelencias = [
             'hospitalidade' => 1,
             'prestreza' => 2,

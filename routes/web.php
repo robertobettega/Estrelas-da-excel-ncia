@@ -1,14 +1,26 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
-Route::get('/', function () {
-    return redirect('/home');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/home', [HomeController::class, 'HomePage']);
+Route::get('/', function () {
+    return redirect('/home');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/home', [HomeController::class, 'HomePage'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/rank', [HomeController::class, 'Usersexceleciasall']);
 
@@ -19,6 +31,7 @@ Route::get('/teste', [HomeController::class, 'renderCardExcelencias']);
 Route::get('/login', function () {
     return view('login');
 });
+
 Route::get('/Cadastro', function () {
     return view('Cadastro');
 });
@@ -37,3 +50,6 @@ Route::get('/aguardandoaprovacao', function () {
 // Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/minhasestatisticas', [AdminController::class, 'HomePage']);
 
+
+
+require __DIR__.'/auth.php';
