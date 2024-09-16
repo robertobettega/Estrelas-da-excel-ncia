@@ -18,8 +18,6 @@ class HomeController extends Controller
             'prestreza' => 2,
             'inovacao' => 3,
             'seguranca' => 4,
-            'batman' => 9,
-            'superman' => 10,
         ];
     
         $dados = [];

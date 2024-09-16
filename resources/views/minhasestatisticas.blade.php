@@ -19,13 +19,15 @@
                 <label>Excelencia:</label>
                 <div>
                     {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
-
+                    
                     <select class="col form-select col-6" aria-label="Selecione o Usuário" id="caixaexcelencia">
-                        <option selected>Selecione a excelencia</option>
-                        <option>Hospitalidade</option>
-                        <option>Prestreza</option>
-                        <option>Inovação</option>
-                        <option>Segurança</option>
+                        <option selected disabled>Escolha a excelencia</option>
+                        @foreach ($excelencias_opcoes as $opcoes)
+                        <option value="{{ $opcoes->id }}">
+                            {{ $opcoes->DESCRICAO }}
+                            {{-- ID:({{ $opcoes->id }}) --}}
+                        </option>
+                    @endforeach
                     </select>
                 </div>
             </div>
@@ -36,18 +38,19 @@
                     {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
 
                     <select class="col form-select" aria-label="Selecione o Usuário" id="caixaexcelencia">
-                        <option selected>Janeiro</option>
-                        <option>Fevereiro</option>
-                        <option>Março</option>
-                        <option>Abril</option>
-                        <option>Maio</option>
-                        <option>Junho</option>
-                        <option>Julho</option>
-                        <option>Agosto</option>
-                        <option>Setembro</option>
-                        <option>Outubro</option>
-                        <option>Novembro</option>
-                        <option>Dezembro</option>
+                        <option selected disabled>Escolha o mês</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
                     </select>
                 </div>
             </div>
@@ -77,7 +80,7 @@
             <div class="card card-estatistica">
                 <div class="d-flex flex-wrap ">
                     <div>
-                        <img src="images/Inovação.png" style="width: 160px; margin: 15px" alt="Inovação">
+                        <img src="images/Inovacao.png" style="width: 160px; margin: 15px" alt="Inovação">
                         <div><b>Inovação</b></div>
                     </div>
                     <div class="col align-self-center"><b>2</b></div>
