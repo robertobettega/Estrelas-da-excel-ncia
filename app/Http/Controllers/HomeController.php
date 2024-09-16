@@ -9,61 +9,39 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
+    /**
+     * 
+     * !!!!! COMENTÁRIO PARA LEMBRAR!!!!
+     * ESSA FUNÇÃO PODE SER ADAPTADA PARA FUNCIONAR APENAS COM O INSERT DE UMA NOVA QUALIFICAÇÃO NO DB, BUSCAR FAZER ISSO QUANDO FOR IMPLANTAR EM UM SERVIDOR
+     */
     public function HomePage()
-{
-    // PEGANDO AS EXCELENCIAS
-    $excelencias_opcoes = home::GetQualidades();
+    {
+        $excelencias_opcoes = home::GetQualidades();
 
-    //USUÁRIOS DA CAIXA DE SELECT
-    $users = home::GetAllUsers();
+        // $excelencias = array_column($excelencias_opcoes, 'nome_coluna_desejada');
 
-    // VALORES NÚMERICOS DAS EXCELENCIAS DENTRO DO BANCO, EM QUE SÃO OS SEUS ID'S EM "QUALIDADES"
-    $hospitalidade = 1;
-    $prestreza = 2;
-    $inovacao = 3;
-    $seguranca = 4;
-
-    // COLOCANDO OS VALORES EM CADA TIPO DE EXCELENCIA PARA ELE ME  TRAZER O TOP 3 DE CADA UMA
-    $hospitalidade_rank = home::getAllExcelenciasUsers($hospitalidade);
-    $prestreza_rank = home::getAllExcelenciasUsers($prestreza);
-    $inovacao_rank = home::getAllExcelenciasUsers($inovacao);
-    $seguranca_rank = home::getAllExcelenciasUsers($seguranca);
-
-    // ARMAZENANDO EM APENAS 1 VARIAVEL PARA SER ENCAMINHADA PARA O VIEW
-    $data = [
-        "users"=>$users,
-        "excelencias_opcoes"=>$excelencias_opcoes,
-        "hospitalidade_rank" => $hospitalidade_rank,
-        "prestreza_rank" => $prestreza_rank,
-        "inovacao_rank" => $inovacao_rank,
-        "seguranca_rank" => $seguranca_rank,
-
-        //Informações dos cards da caixa de excelencia para renderizar sem precisar repetir 4 vezes na home
-        'excelencias' => $excelencias_opcoes,
-    ];
-
-    return view('home', $data);
-    // return $users;
-}
-
-// public function atribuirGamificacao()
-//     {
-//         $campo1 = 1;
-//         $campo2 = 2;
-//         $campo3 = 3;
-
-//         $dados = [
-//             'ATRIBUTOS_idATRIBUTOS' => $campo1,
-//             'USUARIO'               => 'user123',
-//             'JUSTIFICATIVA'         => 'Motivo da atribuição',
-//             'DEDICATORIA'           => 'Dedicatória especial',
-//             'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
-//         ];
-
-//         // $insert = Home::insertPin($dados);
-//         // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
-        
-//     }
+        $excelencias = [
+            'hospitalidade' => 1,
+            'prestreza' => 2,
+            'inovacao' => 3,
+            'seguranca' => 4,
+        ];
+    
+        $dados = [];
+        foreach ($excelencias as $excelencia => $id) {
+            $dados[$excelencia] = Home::getAllExcelenciasUsers($id);
+        }
+    
+        $users = home::GetAllUsers(); 
+    
+        $data = [
+            "excelencias_opcoes" => $excelencias_opcoes,
+            "users" => $users,
+            "dados" => $dados,
+        ];
+    
+        return view('home', $data);
+    }
 
     /**
      * 
@@ -76,37 +54,50 @@ class HomeController extends Controller
 
     }
 
-    public function insertDados($usuario, $excelencia)
+    public function insertDados(Request $request)
     {
-        
-        // var_dump("Usuário: $usuario, Excelência: $excelencia");
-        $dados = [
-            'ID_QUALIDADE' => $excelencia,
-            'USUARIO'               => $usuario,
-            'JUSTIFICATIVA'         => 'Motivo da atribuição',
-            'DEDICATORIA'           => 'Dedicatória especial',
-            'DATA_ATRIBUICAO'       => now(),  // Insere a data atual
-        ];
+        try {
 
-        $insert = Home::insertPin($dados);
-        // return $insert ? 'Dados inseridos com sucesso!' : 'Erro ao inserir os dados';
-        
+            $dados = [
+                'ID_QUALIDADE'       => $request->input('excelencia'),
+                'USUARIO'            => $request->input('usuario'),
+                'JUSTIFICATIVA'      => $request->input('justificativa'),
+                'DEDICATORIA'        => $request->input('dedicatoria'),
+                'DATA_ATRIBUICAO'    => now(),
+            ];
+    
+            Home::insertPin($dados);
+    
+            return response()->json(['success' => true, 'message' => 'Dados inseridos com sucesso!']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
-
-
+    
     /**
      * 
      * REALIZANDO UM TESTE PARA EVITAR FICAR CRIANDO HTML REPETITIVOS
      */
     public function renderCardExcelencias()
     {
-
-        $excelencia = Home::GetQualidades();
-
-        $data = [
-            'excelencias' => $excelencia
+        // ARRAY PARA OS ID'S DENTRO DO BANCO DAS QUALIDADES NO BANCO
+        $excelencias = [
+            'hospitalidade' => 1,
+            'prestreza' => 2,
+            'inovacao' => 3,
+            'seguranca' => 4,
         ];
+    
+        $dados = [];
 
-        return view('assets/cards-excelencia', $data)->render();
+        // FOREACH QUE PEGA OS ID´S DE CADA VALOR DENTRO DO ARRAY E EXECUTA A FUNÇÃO DO CONTROLLER
+        foreach ($excelencias as $excelencia => $id) {
+            $dados[$excelencia] = Home::getAllExcelenciasUsers($id);
+        }
+    
+        // return view('assets.cards-contagemexcelencias', ['dados' => $dados])->render();
+        return $dados;
+
     }
+    
 }

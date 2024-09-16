@@ -1,30 +1,40 @@
 
 var botaosalvar = document.getElementById("btnsalvar");
-botaosalvar.addEventListener("click", function(){
+botaosalvar.addEventListener("click", function() {
 
+    // CAIXAS DE OPTIONS
     const option_usuario = document.getElementById('caixausuario').value;
     const excelencia = document.getElementById("caixaexcelencia").value;
 
-        console.log(option_usuario);
-        console.log(excelencia);
+    // CAIXAS DE TEXTO
+    const justificativa = document.getElementById("caixajustificativa").value;
+    const dedicatoria = document.getElementById("caixadedicatoria").value;
 
-        $.ajax({
-            url: `/insert/${option_usuario}/${excelencia}`,
-            method: 'GET',
-            data: {
-                option_usuario: option_usuario,
-                excelencia: excelencia,
-            },
-            success: function (response) {
-                console.log("AJAX está enviando");
-                // window.location.href = `/insert/'${option_usuario}/${excelencia}`;
-            },
-            error: function (error) {
-                console.log('Erro na solicitação AJAX:', error);
-            }
-        });
+    Swal.fire(
+        {
+            text: 'Sucesso ao salvar!',
+            icon: 'success'
+        }
+    )
 
-        // window.location.href = `login/${usuarioselecionado}`;
-        
-        // console.log("Você clicou no botão");
+    $.ajax({
+        url: `/insert`,
+        method: 'POST',
+        data: {
+            usuario: option_usuario,
+            excelencia: excelencia,
+            justificativa: justificativa,
+            dedicatoria: dedicatoria,
+        },
+        success: function (response) {
+            console.log("AJAX está enviando", response);
+            // window.location.href = `/insert`;
+        },
+        error: function (xhr, status, error) {
+            console.log('Erro na solicitação AJAX:');
+            console.log('Status:', status);
+            console.log('Erro:', error);
+            console.log('Resposta do servidor:', xhr.responseText);
+        }
+    });
 });
