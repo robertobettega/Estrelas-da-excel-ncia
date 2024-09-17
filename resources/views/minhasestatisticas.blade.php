@@ -108,7 +108,7 @@
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Inovação</h5>
+                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
                                     <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
@@ -119,7 +119,7 @@
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Inovação</h5>
+                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
                                     <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
@@ -130,7 +130,7 @@
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Inovação</h5>
+                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
                                     <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
@@ -141,7 +141,7 @@
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Inovação</h5>
+                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
                                     <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
@@ -152,7 +152,7 @@
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Inovação</h5>
+                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
                                     <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
@@ -163,7 +163,7 @@
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Inovação</h5>
+                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
                                     <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
@@ -175,5 +175,7 @@
                 </div>
             </div>
         </div>
+        
+    </div>
 
     @endsection

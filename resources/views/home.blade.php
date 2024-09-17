@@ -38,7 +38,7 @@
 
 
     <div class="modal fade" id="AvaliacaoModal" tabindex="-1" aria-labelledby="AvaliacaoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header header-avaliacao">
                     <div>
@@ -66,12 +66,12 @@
                             </select>
                         </div>
 
-                        <label>Excelencia:</label>
+                        <label>Excelência:</label>
                         <div class="col-8 pt-8">
                             {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
 
                             <select class="col form-select" aria-label="Selecione o Usuário" id="caixaexcelencia">
-                                <option selected >Selecione a excelencia</option>
+                                <option selected >Selecione a excelência</option>
                                 @foreach ($excelencias_opcoes as $opcoes)
                                     <option value="{{ $opcoes->id }}">
                                         {{ $opcoes->DESCRICAO }}
