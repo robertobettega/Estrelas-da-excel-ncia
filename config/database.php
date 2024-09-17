@@ -43,25 +43,37 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
-        'mysql' => [
-            'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
-        ],
+     // Conexão padrão
+     'mysql' => [
+        'driver' => 'mysql',
+        'host' => env('DB_HOST', '127.0.0.1'),
+        'port' => env('DB_PORT', '3306'),
+        'database' => env('DB_DATABASE', 'l_breeze'),  // banco padrão
+        'username' => env('DB_USERNAME', 'root'),
+        'password' => env('DB_PASSWORD', ''),
+        'unix_socket' => env('DB_SOCKET', ''),
+        'charset' => 'utf8mb4',
+        'collation' => 'utf8mb4_unicode_ci',
+        'prefix' => '',
+        'strict' => true,
+        'engine' => null,
+    ],
+
+    // Conexão para outro banco de dados
+    'mysql_other' => [
+        'driver' => 'mysql',
+        'host' => env('DB_OTHER_HOST', '127.0.0.1'),   // Certifique-se que o host está correto
+        'port' => env('DB_OTHER_PORT', '3306'),        // A porta também pode ser diferente
+        'database' => env('DB_OTHER_DATABASE', 'laravel'),  // Nome do outro banco
+        'username' => env('DB_OTHER_USERNAME', 'root'), // Usuário do outro banco
+        'password' => env('DB_OTHER_PASSWORD', ''),     // Senha do outro banco
+        'unix_socket' => env('DB_OTHER_SOCKET', ''),
+        'charset' => 'utf8mb4',
+        'collation' => 'utf8mb4_unicode_ci',
+        'prefix' => '',
+        'strict' => true,
+        'engine' => null,
+    ],
 
         'pgsql' => [
             'driver' => 'pgsql',

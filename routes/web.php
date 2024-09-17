@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -26,7 +28,21 @@ Route::get('/rank', [HomeController::class, 'Usersexceleciasall'])->middleware([
 
 route::post('/insert', [HomeController::class, 'insertDados'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/teste', [HomeController::class, 'renderCardExcelencias'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/teste', [HomeController::class, 'imprimirUser'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dados', function () {
+    $query = "SELECT * FROM l_breeze.users";
+    
+    $dadosMySql = DB::select($query);
+
+    $dadosOtherDb = DB::connection('')->select($query);
+
+    return response()->json([
+        'dadosMySql' => $dadosMySql,
+        'dadosOtherDb' => $dadosOtherDb,
+    ]);
+});
+
 
 Route::get('/login', function () {
     return view('login');

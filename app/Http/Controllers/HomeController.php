@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\home;
 use App\Models\admin;
 use Illuminate\Http\Request;
@@ -32,6 +33,8 @@ class HomeController extends Controller
             $dados[$excelencia] = Home::getAllExcelenciasUsers($id);
         }
     
+        return $dados;
+
         $users = home::GetAllUsers(); 
     
         $data = [
@@ -54,16 +57,33 @@ class HomeController extends Controller
 
     }
 
+
+    /**
+     * 
+     * FUNÇÃO DE TESTE USADO PARA CAPTAR O USUARIO QUE ESTÁ LOGADO ATUALMENTE
+     * 
+     */
+    public function imprimirUser()
+    {
+
+        $user = Auth::user();
+        return $user;
+    
+    }
+
     public function insertDados(Request $request)
     {
         try {
 
+            // $user = Auth::user();
+
             $dados = [
                 'ID_QUALIDADE'       => $request->input('excelencia'),
-                'USUARIO'            => $request->input('usuario'),
-                'JUSTIFICATIVA'      => $request->input('justificativa'),
-                'DEDICATORIA'        => $request->input('dedicatoria'),
-                'DATA_ATRIBUICAO'    => now(),
+                'ID_USUARIO'         => $request->input('usuario'),
+                'ID_USUARIOATRIBUIDO' => $request->input('usuario'),
+                'ID_JUSTIFICATIVA'  => $request->input('justificativa'),
+                'DEDICATORIA'       => $request->input('dedicatoria'),
+                'DATA_ATRIBUICAO'   => now(),
             ];
     
             Home::insertPin($dados);

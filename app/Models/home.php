@@ -52,28 +52,30 @@ class home extends Model
     public static function getAllExcelenciasUsers($excelencia){
 
         $query = "
-        WITH rankusuarios AS (
+            WITH ranked_usuario AS (
+                SELECT
+                    ID_USUARIOATRIBUIDO,
+                    ID_QUALIDADE,
+                    COUNT(*) AS count_valor,
+                    ROW_NUMBER() OVER (PARTITION BY ID_QUALIDADE ORDER BY COUNT(*) DESC) AS rankvalor
+                FROM estrelaexcelencia.pin
+                GROUP BY ID_USUARIOATRIBUIDO, ID_QUALIDADE
+            )
             SELECT
-                USUARIO,
+                LB.name as NOME_ATRIBUIDO,
+                ID_USUARIOATRIBUIDO,
                 ID_QUALIDADE,
-                COUNT(*) AS count_valor,
-                ROW_NUMBER() OVER (PARTITION BY ID_QUALIDADE ORDER BY COUNT(*) DESC) AS rankvalor
-            FROM estrelaexcelencia.pin
-            GROUP BY USUARIO, ID_QUALIDADE
-        )
-        SELECT
-            concat(cs.nome, ' ', cs.sobrenome) as USUARIO,
-            ID_QUALIDADE,
-            count_valor,
-            rankvalor as posicoes
-        FROM rankusuarios AS usu
-		inner join centralservicos.usuario as cs ON cs.id = usu.USUARIO
-        WHERE rankvalor <= 3 and ID_QUALIDADE = $excelencia
-        order by posicoes asc;
-    ";
-
-    
-    $dadosMySql = DB::select($query);
+                count_valor,
+                rankvalor as posicoes
+            FROM ranked_usuario
+                INNER JOIN l_breeze.users as LB
+                    ON LB.id = ID_USUARIOATRIBUIDO
+                                WHERE rankvalor <= 3 and ID_QUALIDADE = $excelencia
+            ORDER BY posicoes asc;
+                    ";
+                    
+    // $dadosMySql = DB::select($query);
+    $dadosMySql = DB::connection('mysql_other')->select($query);
     return $dadosMySql;
     }
 
@@ -84,12 +86,13 @@ class home extends Model
      */
     public static function insertPin($dados)
     {
-        return DB::table('estrelaexcelencia.pin')->insert([
-            'ID_QUALIDADE' => $dados['ID_QUALIDADE'],
-            'USUARIO'               => $dados['USUARIO'],
-            'JUSTIFICATIVA'         => $dados['JUSTIFICATIVA'],
-            'DEDICATORIA'           => $dados['DEDICATORIA'],
-            'DATA_ATRIBUICAO'       => $dados['DATA_ATRIBUICAO'],
+        return DB::table('pin')->insert([
+            'ID_QUALIDADE'        => $dados['ID_QUALIDADE'],
+            'ID_USUARIO'          => $dados['ID_USUARIO'],
+            'ID_USUARIOATRIBUIDO' => $dados['ID_USUARIOATRIBUIDO'], 
+            'ID_JUSTIFICATIVA'    => $dados['ID_JUSTIFICATIVA'],
+            'DEDICATORIA'        => $dados['DEDICATORIA'],
+            'DATA_ATRIBUICAO'    => $dados['DATA_ATRIBUICAO'],
         ]);
     }
     
