@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/your-project-id.css">
 </head>
 
+
 <body>
     <nav class="navbar">
         <div class="container-fluid">
@@ -42,7 +43,7 @@
         @yield('content') <!-- Área onde o conteúdo das outras views será injetado -->
     </main>
 
-    <footer style="margin-left: 0 !important; margin-top: 1em;">
+    <footer style="margin-left: 0 !important; margin-top: 1em; font-weight:normal;">
         <div>Copyright © 2024 <a href="http://www.hospitalriogrande.com.br/" target="_blank">Hospital Rio Grande</a></div>. Todos os direitos reservados.
         <div class="float-right d-none d-sm-inline-block">
           Versão 0.0.1

@@ -103,7 +103,7 @@
     {{-- OS CARDS ESTÃO USANDO O 'FOREACH' PARA PUXAR OS TOP 3 DE CADA EXCELENCIA, CUIDADO AO ALTERAR O FRONT-END --}}
     <div class="card" style="margin: 15px; padding: 15px">
 
-        <div class="text-center">
+        <div class="text-center mt-4">
             <h4><i class="bi bi-star-fill"></i> Estrelas da excelência</h4>
             <h5><i class="bi bi-star-fill"></i> Destaques do mês</h5>
         </div>
