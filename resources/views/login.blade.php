@@ -13,6 +13,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/your-project-id.css">
 </head>
 <style>
     .input-with-icon {
@@ -35,7 +36,7 @@
 <body>
     <header class="text-center ">
         <img class="logo img-fluid" src="{{ asset('images/Logo Hospital Rio Grande.png') }}" alt="Logo">
-        <div class="text-container">
+        <div class="text-container" style="font-family: 'ITC Avant Garde Gothic', sans-serif;">
             <h1 class="h11">ESTRELAS DA</h1>
             <h1 class="h12">EXCELÊNCIA</h1>
         </div>

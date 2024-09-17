@@ -22,7 +22,7 @@
    
     <div class="container-fluid text-center">
         <div>
-            <img src="images/Logo estrelas da excelencia.png" alt="Estrelas da Excelência" style="width: 260px">
+            <img src="images/Logo.png" alt="Estrelas da Excelência" style="height: 120px">
         </div>
         <h5>Dedique um pin para um colaborador!</h5>
         <img src="{{ asset('images/Divisória Degradê (5).png') }}" alt="">

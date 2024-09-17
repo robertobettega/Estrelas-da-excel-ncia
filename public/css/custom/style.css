@@ -19,14 +19,16 @@ header {
 
 .h11 {
     font-size: 24px;
-    font-family: 'Crimson Text', serif;
+    font-family: 'ITC Avant Garde Gothic', sans-serif;
     text-align: center;
     color: #000000;
 }
 
 .h12 {
-    font-size: 40px;
+    font-size: 50px;
     color: #13743C;
+    font-family: 'ITC Avant Garde Gothic', sans-serif;
+    font-weight: bolder;
 }
 
 .image-container {
@@ -48,7 +50,7 @@ h2 {
     flex: 1; /* Garante que a container ocupe o espaço disponível */
 }
 
-input[type="text"] {
+/* input[type="text"] {
     width: 340px;
     border: 3px solid #1C2C5C;
     border-radius: 12px;
@@ -59,7 +61,7 @@ input[type="password"] {
     border: 3px solid #1C2C5C;
     border-radius: 12px;
     height: 60px;
-}
+} */
 
 .input-container {
     position: relative;
@@ -255,3 +257,8 @@ height: 2px;
     padding: 0;              /* Remove o padding padrão dos títulos h1 */
 }
 
+.logo-login {
+    max-width: 10px; /* Ajuste o tamanho conforme necessário */
+    margin: 0 auto;   /* Centraliza o logotipo horizontalmente */
+    display: block;   /* Faz com que o logotipo se comporte como um bloco */
+}
