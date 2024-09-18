@@ -30,9 +30,13 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="profile">Meus dados</a></li>
                     <li><a class="dropdown-item" href="minhasestatisticas">Minhas estatísticas</a></li>
-                    <li><a class="dropdown-item" href="estatisticas-rh">Estatísticas RH</a></li>
-                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                            data-bs-target="#AjudaModal">Ajuda</a></li>
+
+                    @if (Auth::user()->isAdmin())
+                        <li><a class="dropdown-item" href="estatisticas-rh">Estatísticas RH</a></li>
+                        <li><a class="dropdown-item" href="aprovacaorh">Aprovação RH</a></li>
+                    @endif
+
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#AjudaModal">Ajuda</a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -43,6 +47,7 @@
             </div>
         </div>
     </nav>
+
 
     <main>
         @yield('content') <!-- Área onde o conteúdo das outras views será injetado -->

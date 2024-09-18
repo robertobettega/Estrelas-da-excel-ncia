@@ -262,3 +262,13 @@ height: 2px;
     margin: 0 auto;   /* Centraliza o logotipo horizontalmente */
     display: block;   /* Faz com que o logotipo se comporte como um bloco */
 }
+
+/* aprovacao rh */
+.aprovar{
+    background-color: #13743C;
+    color: white;
+    border-radius: 1em;
+    text-align: center;
+    
+}
+
