@@ -19,15 +19,15 @@
                 <label>Excelencia:</label>
                 <div>
                     {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
-                    
+
                     <select class="col form-select col-6" aria-label="Selecione o Usuário" id="caixaexcelencia">
                         <option selected disabled>Escolha a excelencia</option>
                         @foreach ($excelencias_opcoes as $opcoes)
-                        <option value="{{ $opcoes->id }}">
-                            {{ $opcoes->DESCRICAO }}
-                            {{-- ID:({{ $opcoes->id }}) --}}
-                        </option>
-                    @endforeach
+                            <option value="{{ $opcoes->id }}">
+                                {{ $opcoes->DESCRICAO }}
+                                {{-- ID:({{ $opcoes->id }}) --}}
+                            </option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -102,17 +102,19 @@
             <h2>Meus pins</h2>
         </div>
         <div>
-            <div class="justify-content-center">
-                <div class="card justify-content-center" style="width: 95%">
+            <div class="justify-content-center" style="margin: 15px">
+                <div class="card justify-content-center" style="width: 95%" style="margin: 15px">
                     <div class="row justify-content-center">
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
+                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
+                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as 13h16</small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
+                                            13h16</small></p>
                                 </div>
                             </div>
                         </div>
@@ -121,9 +123,11 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
+                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
+                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as 13h16</small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
+                                            13h16</small></p>
                                 </div>
                             </div>
                         </div>
@@ -132,9 +136,11 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
+                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
+                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as 13h16</small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
+                                            13h16</small></p>
                                 </div>
                             </div>
                         </div>
@@ -143,9 +149,11 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
+                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
+                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as 13h16</small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
+                                            13h16</small></p>
                                 </div>
                             </div>
                         </div>
@@ -154,9 +162,11 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
+                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
+                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as 13h16</small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
+                                            13h16</small></p>
                                 </div>
                             </div>
                         </div>
@@ -165,9 +175,11 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
+                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
+                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
                                     </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as 13h16</small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
+                                            13h16</small></p>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +187,13 @@
                 </div>
             </div>
         </div>
-        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <div class="card justify-content-center text-center" style="margin:15px">
+            <div class="card-header header-avaliacao">
+                <b>Histórico de pins</b>
+            </div>
+            <div id="graficoHistoricoPins" style="height: 300px; width: 100%;">
+            </div>
+        </div>
     </div>
 
 @endsection
