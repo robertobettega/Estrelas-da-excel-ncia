@@ -28,6 +28,8 @@ route::post('/insert', [HomeController::class, 'insertDados'])->middleware(['aut
 
 Route::get('/teste', [HomeController::class, 'renderCardExcelencias'])->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/estatisticas-rh', [AdminController::class, 'RHPage'])->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/login', function () {
     return view('login');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -49,7 +51,6 @@ Route::get('/aguardandoaprovacao', function () {
 
 // Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/minhasestatisticas', [AdminController::class, 'HomePage'])->middleware(['auth', 'verified'])->name('dashboard');
-
 
 
 require __DIR__.'/auth.php';
