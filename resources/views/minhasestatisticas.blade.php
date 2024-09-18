@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="card text-center justify-content-center">
+    <div class="card text-center justify-content-center" style="margin: 15px">
 
         <div class="container content-container mt-3">
             <h2>Minhas Estatísticas</h2>
@@ -73,7 +73,7 @@
                         <img src="images/Prestreza.png" style="width: 160px; margin: 15px" alt="Prestreza">
                         <div><b>Prestreza</b></div>
                     </div>
-                    <div class="col align-self-center"><b>10</b></div>
+                    <div class="col align-self-center"><b>8</b></div>
                     <img class="img-estat col align-self-center" src="images\estrela.png">
                 </div>
             </div>
@@ -104,7 +104,7 @@
         <div>
             <div class="justify-content-center" style="margin: 15px">
                 <div class="card justify-content-center" style="width: 95%" style="margin: 15px">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center" style="margin: 15px">
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
@@ -118,20 +118,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
-                                    <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
-                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
-                                            13h16</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
+
+                        <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px; margin-bottom: 10px;">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
@@ -189,7 +177,7 @@
         </div>
         <div class="card justify-content-center text-center" style="margin:15px">
             <div class="card-header header-avaliacao">
-                <b>Histórico de pins</b>
+                <b>Meu histórico de pins</b>
             </div>
             <div id="graficoHistoricoPins" style="height: 300px; width: 100%;">
             </div>

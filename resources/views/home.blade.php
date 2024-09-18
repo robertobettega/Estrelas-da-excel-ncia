@@ -105,7 +105,7 @@
 
         <div class="text-center mt-4">
             <h4><i class="bi bi-star-fill"></i> Estrelas da excelência</h4>
-            <h5><i class="bi bi-star-fill"></i> Destaques do mês</h5>
+            <h5><i class="bi bi-star-fill"></i> Destaques do trimestre</h5>
         </div>
 
         <div class="container-fluid row justify-content-center"  style="margin-left: 5px">
