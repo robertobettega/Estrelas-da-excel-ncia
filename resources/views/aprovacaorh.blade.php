@@ -6,38 +6,50 @@
 </head>
 
 @section('content')
-<div class="justify-content-center text-center">
-    <div class="container content-container mt-3">
-        <h2>Aprovação de cadastro</h2>
-        <img src="images/Divisória Degradê (9).png" alt="">
-    </div>
+<div class="container mt-3 text-center">
+<h2 class="title-large">Aprovação de cadastro</h2>
+<img src="images/Divisória Degradê (9).png" alt="" class="img-large">
 
-    <div class="card" style="margin: 30px">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Usuário</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Matrícula</th>
-                    <th scope="col">Aprovação</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($users as $user)
-                <tr>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->matricula }}</td>
-                    <td><button class="aprovar">Aprovar</button></td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
 
-        <div class="d-flex justify-content-center mt-4">
-         {{ $users->links('components.custom-pagination') }} <!-- Chama a nova visualização de paginação -->
+    <div class="card mt-3 col-sm-10 col-12 mb-5">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>E-mail</th>
+                        <th>Matrícula</th>
+                        <th>Aprovação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($users as $user)
+                    <tr>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->matricula }}</td>
+                        <td>
+                            <button class="aprovar btn btn-primary" onclick="aprovar(this)">Aprovar</button>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
 
+        <div class="d-flex justify-content-center">
+            {{ $users->links('components.custom-pagination') }}
+        </div>
     </div>
 </div>
+
+<script>
+    function aprovar(button) {
+        // Altera o texto do botão e a classe
+        button.textContent = 'Aprovado';
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-danger'); // Muda para vermelho
+        button.disabled = true; // Desabilita o botão após clicar
+    }
+</script>
 @endsection

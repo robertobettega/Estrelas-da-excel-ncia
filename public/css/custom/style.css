@@ -272,3 +272,16 @@ height: 2px;
     
 }
 
+.img-large {
+    width: 60%; /* Ajusta a largura para ocupar todo o espaço disponível */
+    max-width: 350px; /* Define um limite máximo se necessário */
+    height: 8px; /* Mantém a proporção da imagem */
+}
+
+
+/* minhas estatísticas */
+.img-large2 {
+    width: 60%; /* Ajusta a largura para ocupar todo o espaço disponível */
+    max-width: 280px; /* Define um limite máximo se necessário */
+    height: 8px; /* Mantém a proporção da imagem */
+}

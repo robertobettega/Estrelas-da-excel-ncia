@@ -8,7 +8,7 @@
 
         <div class="container content-container mt-3">
             <h2>Minhas Estatísticas</h2>
-            <img src="images/Divisória Degradê (9).png" alt="">
+            <img class="img-large2" src="images/Divisória Degradê (9).png" alt="">
             <h5>
                 “Toda conquista, um dia, começou como <br> um sonho e uma ideia”
             </h5>
