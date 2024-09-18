@@ -26,7 +26,7 @@ Route::get('/home', [HomeController::class, 'HomePage'])->middleware(['auth', 'v
 
 Route::get('/rank', [HomeController::class, 'Usersexceleciasall'])->middleware(['auth', 'verified'])->name('dashboard');
 
-route::post('/insert', [HomeController::class, 'insertDados'])->middleware(['auth', 'verified'])->name('dashboard');
+route::post('/insert', [HomeController::class, 'insertDados'])->middleware(['auth', 'verified'])->name('insert.dados');
 
 Route::get('/teste', [HomeController::class, 'imprimirUser'])->middleware(['auth', 'verified'])->name('dashboard');
 

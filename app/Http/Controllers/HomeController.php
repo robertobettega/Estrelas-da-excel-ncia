@@ -18,6 +18,7 @@ class HomeController extends Controller
     public function HomePage()
     {
         $excelencias_opcoes = home::GetQualidades();
+        $justificativas_opcoes = home::GetJustificativas();
 
         // $excelencias = array_column($excelencias_opcoes, 'nome_coluna_desejada');
 
@@ -33,12 +34,13 @@ class HomeController extends Controller
             $dados[$excelencia] = Home::getAllExcelenciasUsers($id);
         }
     
-        return $dados;
+        // return $dados;
 
         $users = home::GetAllUsers(); 
     
         $data = [
             "excelencias_opcoes" => $excelencias_opcoes,
+            "justificativas_opcoes" => $justificativas_opcoes,
             "users" => $users,
             "dados" => $dados,
         ];
@@ -75,11 +77,11 @@ class HomeController extends Controller
     {
         try {
 
-            // $user = Auth::user();
+            $user = Auth::user();
 
             $dados = [
                 'ID_QUALIDADE'       => $request->input('excelencia'),
-                'ID_USUARIO'         => $request->input('usuario'),
+                'ID_USUARIO' => $user->id, 
                 'ID_USUARIOATRIBUIDO' => $request->input('usuario'),
                 'ID_JUSTIFICATIVA'  => $request->input('justificativa'),
                 'DEDICATORIA'       => $request->input('dedicatoria'),

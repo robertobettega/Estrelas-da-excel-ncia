@@ -10,12 +10,12 @@ botaosalvar.addEventListener("click", function() {
     const justificativa = document.getElementById("caixajustificativa").value;
     const dedicatoria = document.getElementById("caixadedicatoria").value;
 
-    Swal.fire(
-        {
-            text: 'Sucesso ao salvar!',
-            icon: 'success'
-        }
-    )
+    // Swal.fire(
+    //     {
+    //         text: 'Sucesso ao salvar!',
+    //         icon: 'success'
+    //     }
+    // )
 
     $.ajax({
         url: `/insert`,
@@ -35,6 +35,11 @@ botaosalvar.addEventListener("click", function() {
             console.log('Status:', status);
             console.log('Erro:', error);
             console.log('Resposta do servidor:', xhr.responseText);
+    
+            console.log(option_usuario);
+            console.log(excelencia);
+            console.log(justificativa);
+            console.log(dedicatoria);
         }
-    });
+    });    
 });

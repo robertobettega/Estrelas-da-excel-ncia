@@ -58,8 +58,9 @@
                                 <option selected> Adicione o usuário</option>
                                 @foreach ($users as $usuarios)
                                     <option value="{{ $usuarios->id }}">
-                                        {{ $usuarios->nome }} {{ $usuarios->sobrenome }} 
-                                        {{ $usuarios->matricula }}
+                                        {{ $usuarios->name }} 
+                                        {{-- {{ $usuarios->sobrenome }}  --}}
+                                        {{-- {{ $usuarios->matricula }} --}}
                                         ({{ $usuarios->id }})
                                     </option>
                                 @endforeach
@@ -83,7 +84,15 @@
 
                         <div>
                             <label>Justificativa:</label>
-                            <textarea class="form-control" id="caixajustificativa"></textarea>
+                            <select class="col form-select" aria-label="Selecione o Usuário" id="caixajustificativa">
+                                <option selected >Selecione a excelência</option>
+                                @foreach ($justificativas_opcoes as $opcoes)
+                                    <option value="{{ $opcoes->id }}">
+                                        {{ $opcoes->DESCRICAO }}
+                                        {{-- ID:({{ $opcoes->id }}) --}}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
                         <div>
                             <label>Dedicatória:</label>
@@ -94,7 +103,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="entrar-navbar" id="btnsalvar" onclick="sucesso()" data-bs-dismiss="modal"><b>SALVAR<b></button>
+                    <button type="button" class="entrar-navbar" id="btnsalvar" data-bs-dismiss="modal"><b>SALVAR<b></button>
                 </div>
             </div>
         </div>

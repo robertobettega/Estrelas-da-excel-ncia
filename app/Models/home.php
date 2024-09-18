@@ -18,7 +18,7 @@ class home extends Model
      */
     public static function GetAllUsers()
     {
-        $table = "centralservicos.usuario";
+        $table = "l_breeze.users";
         $fields = "*";
         $where = "";
     
@@ -30,6 +30,16 @@ class home extends Model
     public static function GetQualidades()
     {
         $table = "estrelaexcelencia.qualidade";
+        $fields = "*";
+        $where = "";
+    
+        $dadosMySql = DB::connection('mysql')->select("SELECT $fields FROM $table");
+        return $dadosMySql;
+    }
+
+    public static function GetJustificativas()
+    {
+        $table = "estrelaexcelencia.justificativa";
         $fields = "*";
         $where = "";
     
@@ -86,12 +96,12 @@ class home extends Model
      */
     public static function insertPin($dados)
     {
-        return DB::table('pin')->insert([
+        return DB::connection('mysql_other')->table('estrelaexcelencia.pin')->insert([
             'ID_QUALIDADE'        => $dados['ID_QUALIDADE'],
             'ID_USUARIO'          => $dados['ID_USUARIO'],
-            'ID_USUARIOATRIBUIDO' => $dados['ID_USUARIOATRIBUIDO'], 
+            'ID_USUARIOATRIBUIDO' => $dados['ID_USUARIOATRIBUIDO'],
             'ID_JUSTIFICATIVA'    => $dados['ID_JUSTIFICATIVA'],
-            'DEDICATORIA'        => $dados['DEDICATORIA'],
+            'DEDICATORIA'         => $dados['DEDICATORIA'],
             'DATA_ATRIBUICAO'    => $dados['DATA_ATRIBUICAO'],
         ]);
     }
