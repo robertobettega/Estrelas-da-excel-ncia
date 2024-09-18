@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User; 
 use App\Models\home;
 use Illuminate\Http\Request;
 
@@ -82,6 +82,16 @@ class AdminController extends Controller
     }
 
 
+    public function index()
+    {
+        $users = User::paginate(20); // Altere para 50 ou qualquer outro número desejado
+        return view('aprovacaorh', compact('users'));
+    }
+
+    
+   
+
+    
     public function getMouth()
     {
 
