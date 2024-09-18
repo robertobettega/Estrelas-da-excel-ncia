@@ -17,22 +17,19 @@
     },
 
 --}}
-
 @foreach ($dados as $categoria => $usuarios)
     <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
         <div class="row g-0">
             <div class="col-md-4 text-center">
-
                 <img src="images/{{ ucfirst($categoria) }}.png" style="width: 140px" alt="{{ ucfirst($categoria) }}">
-                <div>{{ ucfirst($categoria) }}</div>
+                <div style="font-weight: 700;">{{ ucfirst($categoria) }}</div>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-
                         {{-- AQUI ESTAMOS SEPARANDO O VALOR DE $USUARIOS (VALORES DO BANCO) NAS COLUNAS PARA CADA DADO NECESSÁRIO DENTRO DA CONSULTA DA MODEL --}}
                         @foreach ($usuarios as $user)
-                            <li class="list-group-item">
+                            <li class="list-group-item" style="font-weight: normal;">
                                 {{ $user->USUARIO }}
                                 ({{ $user->count_valor }})
                                 <span class="badge rounded-pill text-bg-success">{{ $user->posicoes }}°</span>

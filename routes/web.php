@@ -38,6 +38,10 @@ Route::get('/Cadastro', function () {
     return view('Cadastro');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/ajuda', function () {
+    return view('ajuda');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 // Route::get('/minhasestatisticas', function () {
 //     return view('minhasestatisticas');
 // });
