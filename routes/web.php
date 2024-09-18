@@ -30,6 +30,8 @@ route::post('/insert', [HomeController::class, 'insertDados'])->middleware(['aut
 
 Route::get('/teste', [HomeController::class, 'imprimirUser'])->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::post('modal/{id}', [HomeController::class, 'modalAtribuir'])->name('modal.atribuir');
+
 Route::get('/dados', function () {
     $query = "SELECT * FROM l_breeze.users";
     

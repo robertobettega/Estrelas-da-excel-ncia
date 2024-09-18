@@ -20,6 +20,8 @@ class HomeController extends Controller
         $excelencias_opcoes = home::GetQualidades();
         $justificativas_opcoes = home::GetJustificativas();
 
+        // $excelencia_clicada=home::justificativasPorQualidades();
+
         // $excelencias = array_column($excelencias_opcoes, 'nome_coluna_desejada');
 
         $excelencias = [
@@ -46,6 +48,13 @@ class HomeController extends Controller
         ];
     
         return view('home', $data);
+    }
+
+    public function modalAtribuir(Request $request, $id)
+    {
+        $dados = home::justificativasPorQualidades($id);
+     
+        return response()->json(['success' => true, 'dados' => $dados]);
     }
 
     /**

@@ -89,6 +89,25 @@ class home extends Model
     return $dadosMySql;
     }
 
+    public static function justificativasPorQualidades($dados)
+    {
+        $query = "
+        SELECT 
+        qua.id as id_qua,
+        qua.DESCRICAO,
+        jus.id as id_jus,
+        jus.DESCRICAO
+
+        FROM estrelaexcelencia.qualidade as qua
+            INNER JOIN estrelaexcelencia.justificativa as jus
+                ON jus.ID_QUALIDADE = qua.id
+                where qua.id = $dados;
+        ";
+
+        $dadosMySql = DB::connection('mysql_other')->select($query);
+        return $dadosMySql;
+
+    }
 
     /**
      * 
