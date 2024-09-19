@@ -1,6 +1,12 @@
 var botaosalvar = document.getElementById("btnsalvar");
 botaosalvar.addEventListener("click", function() {
 
+    Swal.fire({
+        title: "Pin salvo!",
+        text: "Você dedicou um Pin a um colega!",
+        icon: "success"
+      });
+
     // CAIXAS DE OPTIONS
     const option_usuario = document.getElementById('caixausuario').value;
     const excelencia = document.getElementById("caixaexcelencia").value;
