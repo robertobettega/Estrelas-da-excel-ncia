@@ -89,6 +89,36 @@ class home extends Model
     return $dadosMySql;
     }
 
+    public static function pinForUsers($dados)
+    {
+        $query = "
+            SELECT
+                pin.id as ID_PIN,
+                usuarios.id as ID_USUARIO,
+                usuarios.name as NOME_USUARIO,
+                pin.ID_QUALIDADE as QUALIDADE,
+                QUA.DESCRICAO as QUALIDADE_NOME,
+                pin.ID_JUSTIFICATIVA as JUSTIFICATIVA,
+                jus.DESCRICAO as JUSTIFICATIVA_NOME,
+                pin.DEDICATORIA as DEDICATORIA,
+                DATE_FORMAT(pin.DATA_ATRIBUICAO, '%d/%m/%Y') as DATA_PIN,
+                DATE_FORMAT(pin.DATA_ATRIBUICAO, '%H:%i') as HORA_PIN
+
+            FROM estrelaexcelencia.pin as pin
+                    inner join l_breeze.users as usuarios
+                        ON usuarios.id = pin.ID_USUARIOATRIBUIDO
+                    inner join estrelaexcelencia.qualidade as QUA
+                        ON pin.ID_QUALIDADE = QUA.ID
+                    inner join estrelaexcelencia.justificativa as jus
+                        ON jus.id = pin.ID_JUSTIFICATIVA
+                        
+            WHERE ID_USUARIOATRIBUIDO = $dados
+            ORDER BY ID_PIN DESC";
+                    
+            $dadosMySql = DB::connection('mysql_other')->select($query);
+            return $dadosMySql;
+    }
+
     public static function justificativasPorQualidades($dados)
     {
         $query = "

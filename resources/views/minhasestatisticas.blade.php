@@ -105,72 +105,22 @@
             <div class="justify-content-center" style="margin: 15px">
                 <div class="card justify-content-center" style="width: 95%" style="margin: 15px">
                     <div class="row justify-content-center" style="margin: 15px">
+                        @foreach ($pinusuarios as $pin)
                         <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
+                                    <h5 class="card-title">
+                                        <i class="bi bi-star-fill"></i>{{$pin->QUALIDADE_NOME}}</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
-                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
+                                    <p class="card-text">
+                                        {{ $pin->DEDICATORIA }}
                                     </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
-                                            13h16</small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em {{ $pin->DATA_PIN }} às {{ $pin->HORA_PIN }}</small></p>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
 
-                        <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px; margin-bottom: 10px;">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
-                                    <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
-                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
-                                            13h16</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
-                                    <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
-                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
-                                            13h16</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
-                                    <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
-                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
-                                            13h16</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 mb-2 mb-sm-0" style="margin: 10px">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-star-fill"></i>Inovação</h5>
-                                    <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
-                                    <p class="card-text">Aqui um texto muito especial sobre como você é um funcionário
-                                        incrível e trouxe grande inovação ao hospital. Parabéns, ícone.
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">Pin enviado em 17/09/24 as
-                                            13h16</small></p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

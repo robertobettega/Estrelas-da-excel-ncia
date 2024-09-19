@@ -30,11 +30,15 @@
 
                     <label>Excelência:</label>
                     <div class="col-8 pt-8">
-                        {{-- CAIXA DE OPÇÕES QUE PEGA AS EXCELÊNCIAS --}}
-                        {{-- <select class="col form-select" aria-label="Selecione o Usuário" id="caixaexcelencia"> --}}
+                        <select class="col form-select" aria-label="Selecione o Usuário" id="caixaexcelencia">
+                            <option selected >Selecione a excelência</option>
                             @foreach ($excelencias_opcoes as $opcoes)
-                            <input type="text" id="disabledTextInput" class="col form-control" placeholder="{{ $opcoes->DESCRICAO }}" id="caixaexcelencia">
+                                <option value="{{ $opcoes->id }}">
+                                    {{ $opcoes->DESCRICAO }}
+                                    {{-- ID:({{ $opcoes->id }}) --}}
+                                </option>
                             @endforeach
+                        </select>
                     </div>
 
                     <div>

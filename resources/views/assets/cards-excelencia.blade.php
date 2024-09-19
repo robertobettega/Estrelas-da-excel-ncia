@@ -6,4 +6,3 @@
         <div style="font-weight: 700;">{{ $excelencia->DESCRICAO }}</div>
     </div>
 @endforeach
-

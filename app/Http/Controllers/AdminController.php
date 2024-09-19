@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 use App\Models\home;
 use Illuminate\Http\Request;
@@ -10,8 +12,18 @@ class AdminController extends Controller
 
     public function HomePage()
     {
+
+        $user = Auth::user();
+        $id_usuario = $user->id;
+            // return $id_usuario;
+
+        $pinusuario = home::pinForUsers($id_usuario);
+            $qualidade = array_column($pinusuario, 'QUALIDADE_NOME');
+            // return $pinusuario;
+
         // // PEGANDO AS EXCELENCIAS
-        $excelencias_opcoes = home::GetQualidades();
+        $excelencias_opcoes = home::GetQualidades($qualidade);
+            // return $excelencias_opcoes;
 
         //USUÁRIOS DA CAIXA DE SELECT
         $users = home::GetAllUsers();
@@ -31,6 +43,7 @@ class AdminController extends Controller
         // ARMAZENANDO EM APENAS 1 VARIAVEL PARA SER ENCAMINHADA PARA O VIEW
         $data = [
             "users" => $users,
+            "pinusuarios" => $pinusuario,
             "excelencias_opcoes" => $excelencias_opcoes,
             "hospitalidade_rank" => $hospitalidade_rank,
             "prestreza_rank" => $prestreza_rank,

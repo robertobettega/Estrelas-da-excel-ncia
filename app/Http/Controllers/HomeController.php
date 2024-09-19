@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\home;
-use App\Models\admin;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,7 +20,6 @@ class HomeController extends Controller
         $justificativas_opcoes = home::GetJustificativas();
 
         // $excelencia_clicada=home::justificativasPorQualidades();
-
         // $excelencias = array_column($excelencias_opcoes, 'nome_coluna_desejada');
 
         $excelencias = [
@@ -45,6 +43,7 @@ class HomeController extends Controller
             "justificativas_opcoes" => $justificativas_opcoes,
             "users" => $users,
             "dados" => $dados,
+            "excelencias_box" => $excelencias
         ];
     
         return view('home', $data);
