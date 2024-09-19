@@ -4,10 +4,10 @@ window.onload = function () {
         animationEnabled: true,
         theme: "light2", // "light1", "light2", "dark1", "dark2"
         axisY: {
-            title: "Pins"
+            title: "Número de pins"
         },
         axisX: {
-            title: "Meses"
+            title: "Mês"
         },
         data: [{
             type: "column",
