@@ -22,7 +22,7 @@
    
     <div class="container-fluid text-center">
         <div>
-            <img src="images/Logo.png" alt="Estrelas da Excelência" style="height: 120px">
+            <img src="images/Logo.png" class="img-fluid" alt="Estrelas da Excelência">
         </div>
         <h5>Dedique um pin para um colaborador!</h5>
         <img src="{{ asset('images/Divisória Degradê (5).png') }}" alt="">
@@ -45,7 +45,7 @@
             <h5><i class="bi bi-star-fill"></i> Destaques do mês</h5>
         </div>
 
-        <div class="container-fluid row justify-content-center">
+        <div class="container-fluid row justify-content-center"  style="margin-left: 5px">
 
             @include('assets.cards-contagemexcelencias')
 
