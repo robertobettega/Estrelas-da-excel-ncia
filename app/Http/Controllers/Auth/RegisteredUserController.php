@@ -32,15 +32,17 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'cpf' => ['required', 'string', 'max:15'],
+            'cpf' => ['required', 'string', 'max:15', 'unique:users,cpf'], // Adicionado a tabela 'users' para verificação de unicidade no campo 'cpf'
+            'matricula' => ['required', 'string', 'max:15', 'unique:users,matricula'], // Adicionado a tabela 'users' para 'matricula'
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
-            'email' => $request->email,
             'cpf' => $request->cpf,
+            'matricula' => $request->matricula,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
