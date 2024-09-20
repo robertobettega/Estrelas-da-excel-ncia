@@ -48,6 +48,7 @@
                                         <i class="bi bi-star-fill"></i>{{$pin->QUALIDADE_NOME}}</h5>
                                     <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
                                     <p class="card-text">
+                                        <b> {{ $pin->JUSTIFICATIVA_NOME }} </b> <br>
                                         {{ $pin->DEDICATORIA }}
                                     </p>
                                     <p class="card-text"><small class="text-body-secondary">Pin enviado em {{ $pin->DATA_PIN }} às {{ $pin->HORA_PIN }}</small></p>

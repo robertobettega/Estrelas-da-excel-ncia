@@ -28,7 +28,7 @@
                 <th scope="row">{{ $item->id }}</th>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->email }}</td>
-                <td>6747</td>
+                <td>{{ $item->matricula }}</td>
                 @foreach ($count as $counts)
                 @if  ($counts->ID_USUARIO == $item->id)
                   <td>
