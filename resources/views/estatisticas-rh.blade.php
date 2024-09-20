@@ -29,7 +29,13 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->email }}</td>
                 <td>6747</td>
-                <td>8</td>
+                @foreach ($count as $counts)
+                @if  ($counts->ID_USUARIO == $item->id)
+                  <td>
+                    {{ $counts->TOTAL_QUALIDADE }}
+                  </td>    
+                @endif
+                @endforeach
                 </tr>
             @endforeach
       </table>

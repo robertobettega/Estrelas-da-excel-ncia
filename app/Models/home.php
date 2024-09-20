@@ -146,6 +146,28 @@ class home extends Model
             return $dadosMySql;
     }
 
+    public static function countPinsforUsers()
+    {
+
+        $query = "
+                    SELECT
+                usuarios.id as ID_USUARIO,
+                usuarios.name as NOME_USUARIO,
+                COUNT(*) as TOTAL_QUALIDADE
+            FROM estrelaexcelencia.pin as pin
+                inner join l_breeze.users as usuarios
+                    ON usuarios.id = pin.ID_USUARIOATRIBUIDO
+                inner join estrelaexcelencia.qualidade as QUA
+                    ON pin.ID_QUALIDADE = QUA.ID
+            GROUP BY usuarios.id, usuarios.name
+            ORDER BY TOTAL_QUALIDADE DESC;
+        ";
+
+        $dadosMySql = DB::connection('mysql_other')->select($query);
+        return $dadosMySql;
+
+    }
+
     public static function justificativasPorQualidades($dados)
     {
         $query = "

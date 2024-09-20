@@ -82,9 +82,13 @@ class AdminController extends Controller
         $inovacao_rank = home::getAllExcelenciasUsers($inovacao);
         $seguranca_rank = home::getAllExcelenciasUsers($seguranca);
 
+        $count_pins = home::countPinsforUsers();
+
+
         // ARMAZENANDO EM APENAS 1 VARIAVEL PARA SER ENCAMINHADA PARA O VIEW
         $data = [
             "users" => $users,
+            "count" => $count_pins,
             "excelencias_opcoes" => $excelencias_opcoes,
             "hospitalidade_rank" => $hospitalidade_rank,
             "prestreza_rank" => $prestreza_rank,
