@@ -44,8 +44,7 @@ Route::get('/dados', function () {
 Route::get('/teste', [HomeController::class, 'imprimirUser'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
-//ROTAS SEM PESPECTIVA DE USO 
-Route::get('/aguardandoaprovacao', function () { return view('aguardandoaprovacao'); })->middleware(['verified']);
+Route::get('/aguardandoaprovacao', function () { return view('aguardandoaprovacao'); });
 
 
 // ROTAS APENAS PARA ADMINSITRADORES ///////////////////////////////////////////////////////////////
