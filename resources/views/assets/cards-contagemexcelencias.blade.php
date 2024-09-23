@@ -18,7 +18,7 @@
 
 --}}
 @foreach ($dados as $categoria => $usuarios)
-    <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px">
+    <div class="card mb-3" style="max-width: 450px; padding: 15px; margin: 15px; box-shadow: 5px 5px #C0C0C0">
         <div class="row g-0">
             <div class="col-md-4 text-center">
                 <img src="images/{{ ucfirst($categoria) }}.png" style="width: 140px" alt="{{ ucfirst($categoria) }}">
@@ -30,8 +30,7 @@
                         {{-- AQUI ESTAMOS SEPARANDO O VALOR DE $USUARIOS (VALORES DO BANCO) NAS COLUNAS PARA CADA DADO NECESSÁRIO DENTRO DA CONSULTA DA MODEL --}}
                         @foreach ($usuarios as $user)
                         <li class="list-group-item" style="font-weight: normal;">
-                                {{ $user->NOME_ATRIBUIDO }}
-                                ({{ $user->count_valor }})
+                                {{ $user->NOME_ATRIBUIDO }}: {{ $user->count_valor }} pins
                                 <span class="badge rounded-pill text-bg-success">{{ $user->posicoes }}°</span>
                             </li>
                         @endforeach
