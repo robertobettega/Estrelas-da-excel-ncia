@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
+    public function index()
+    {
+
+        return view('aguardandoaprovacao'); // Carrega uma view de exemplo
+    }
+
     /**
      * 
      * !!!!! COMENTÁRIO PARA LEMBRAR!!!!
@@ -16,6 +22,13 @@ class HomeController extends Controller
      */
     public function HomePage()
     {
+
+            // Verifica o status do usuário aqui
+            if (Auth::check() && Auth::user()->status == 0) {
+                // Alguma lógica para permitir que o usuário acesse a página
+                return view('aguardandoaprovacao'); // Permite o acesso, mesmo que o status seja 0
+            }
+
         $excelencias_opcoes = home::GetQualidades();
         $justificativas_opcoes = home::GetJustificativas();
 

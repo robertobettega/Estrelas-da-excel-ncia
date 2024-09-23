@@ -107,7 +107,6 @@ class AdminController extends Controller
     {
         // Filtra os usuários que não são administradores
         $users = User::where('is_admin', false)->paginate(20); // Altere o número para a quantidade de registros por página
-    
         return view('aprovacaorh', compact('users'));
     }
    
