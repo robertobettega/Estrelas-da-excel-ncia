@@ -11,31 +11,36 @@
 <img src="images/Divisória Degradê (9).png" alt="" class="img-large">
 
 
-    <div class="card mt-3 col-sm-10 col-12 mb-5">
-        <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>Usuário</th>
-                        <th>E-mail</th>
-                        <th>Matrícula</th>
-                        <th>Aprovação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($users as $user)
-                    <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->matricula }}</td>
-                        <td>
-                            <button class="aprovar btn btn-primary" onclick="aprovar(this)">Aprovar</button>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+<div class="card mt-3 col-sm-10 col-12 mb-5">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>E-mail</th>
+                    <th>Matrícula</th>
+                    <th>Aprovação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($users as $user)
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->matricula }}</td>
+                    <td>
+                        <form action="{{ url('/acesso/'. $user->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            <button type="submit" class="aprovar btn btn-primary">Aprovar</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
         <div class="d-flex justify-content-center">
             {{ $users->links('components.custom-pagination') }}
