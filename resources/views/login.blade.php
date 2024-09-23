@@ -15,23 +15,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/your-project-id.css">
 </head>
-<style>
-    .input-with-icon {
-        background-image: url('images/Icone Usuario.png');
-        /* Caminho corrigido */
-    }
-
-    .input-with-icon2 {
-        background-image: url('images/Icone Cadeado.png');
-        /* Caminho corrigido */
-    }
-
-    .input-with-icon::placeholder,
-    .input-with-icon2::placeholder {
-        color: #1C2C5C;
-        font-size: 14px;
-    }
-</style>
 
 <body>
     <header class="text-center ">

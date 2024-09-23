@@ -54,11 +54,13 @@
         @yield('content') <!-- Área onde o conteúdo das outras views será injetado -->
     </main>
 
-    <footer style="margin-top: 30px; font-weight:normal">
-        <div class="d-flex flex-wrap text-center justify-content-center">
+    <footer style="font-weight:normal">
+        <div class="d-flex flex-wrap">
+            <div class="text-center justify-content-center">
             <div class="col-11">Copyright © 2024 <a href="http://www.hospitalriogrande.com.br/" target="_blank">Hospital Rio Grande</a>. Todos os direitos reservados. Versão 0.0.1</div>
-            <div class="col-1 align-items-end">
-            <img src="images/GPConnect.svg" style="width: 100px">
+
+            <img src="images/GPConnect.svg" style="width: 100px; margin-top: 1px;" >
+
             </div>
         </div>
     </footer>

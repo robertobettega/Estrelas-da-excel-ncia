@@ -35,7 +35,7 @@
         <div class="flex items-center justify-between mt-4">
             <div>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="inline-block px-4 py-2 bg-gray-600 text-gray rounded-md ">
+                    <a href="{{ route('register') }}" class="inline-block px-4 py-2 rounded-md ">
                         Registre-se
                     </a>
                 @endif
