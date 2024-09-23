@@ -55,7 +55,7 @@
                     </div>
                     <div>
                         <label>Dedicatória:</label>
-                        <textarea class="form-control" id="caixadedicatoria"></textarea>
+                        <textarea class="form-control" id="caixadedicatoria" maxlength="150"></textarea>
                     </div>
 
                 </div>
