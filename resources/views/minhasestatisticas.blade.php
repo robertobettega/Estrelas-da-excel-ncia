@@ -51,6 +51,7 @@
                                         </h5>
                                         <img src="images/Divisória Degradê (9).png" class="img-fluid" style="height: auto">
                                         <p class="card-text">
+                                            
                                             <b> {{ $pin->JUSTIFICATIVA_NOME }} </b> <br>
                                             {{ $pin->DEDICATORIA }}
                                         </p>

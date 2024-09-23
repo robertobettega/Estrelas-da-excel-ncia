@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css\custom\style.css') }}">
     <link rel="stylesheet" href="https://use.typekit.net/your-project-id.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/css/multi-select-tag.css">
 </head>
 
 
@@ -147,5 +148,6 @@
     {{-- <script src="{{ asset('js\custom\aprovaruser.js') }}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.all.min.js"></script>
     <script src="{{ asset('js\custom\canvasjs.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
     @stack('scripts')
 </body>

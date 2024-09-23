@@ -22,7 +22,8 @@ class User extends Authenticatable
         'cpf',
         'matricula',
         'password',
-        'is_admin', // Adicione o campo aqui
+        'is_admin',
+        'status', // Adicione o campo aqui
     ];
 
     /**
@@ -53,5 +54,9 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->is_admin; // Verifica o campo is_admin
+    }
+    public function status()
+    {
+        return $this->status; // Verifica o campo status
     }
 }

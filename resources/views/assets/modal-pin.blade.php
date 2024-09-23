@@ -3,8 +3,8 @@
         <div class="modal-content">
             <div class="modal-header header-avaliacao">
                 <div>
-                <img src="{{ asset('images/Logo Hospital Rio Grande.png') }}"
-                    style="width: 35px; margin-right: 15px" alt="Logo">
+                    <img src="{{ asset('images/Logo Hospital Rio Grande.png') }}" style="width: 35px; margin-right: 15px"
+                        alt="Logo">
                 </div>
                 <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin 10px">Dedicar pin!</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -19,7 +19,7 @@
                             <option selected> Adicione o usuário</option>
                             @foreach ($users as $usuarios)
                                 <option value="{{ $usuarios->id }}">
-                                    {{ $usuarios->name }} 
+                                    {{ $usuarios->name }}
                                     {{-- {{ $usuarios->sobrenome }}  --}}
                                     {{-- {{ $usuarios->matricula }} --}}
                                     ({{ $usuarios->id }})
@@ -31,7 +31,7 @@
                     <label>Excelência:</label>
                     <div class="col-8 pt-8">
                         <select class="col form-select" aria-label="Selecione o Usuário" id="caixaexcelencia">
-                            <option selected >Selecione a excelência</option>
+                            <option selected>Selecione a excelência</option>
                             @foreach ($excelencias_opcoes as $opcoes)
                                 <option value="{{ $opcoes->id }}">
                                     {{ $opcoes->DESCRICAO }}
@@ -42,15 +42,29 @@
                     </div>
 
                     <div>
-                        <label>Justificativa:</label>
-                        <select class="col form-select" aria-label="Selecione o Usuário" id="caixajustificativa">
-                            <option selected >Selecione a excelência</option>
-                            @foreach ($justificativas_opcoes as $opcoes)
+                        <label>Justificativa: <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                data-bs-title="Você pode selecionar mais de uma opção com o atalho 'Shift + click'"></i></label>
+                        {{-- <select class="col form-select" multiple aria-label="Multiple select" id="caixajustificativa">
+                            <option selected>Selecione a excelência</option> --}}
+                            {{-- @foreach ($justificativas_opcoes as $opcoes)
                                 <option value="{{ $opcoes->id }}">
                                     {{ $opcoes->DESCRICAO }}
-                                    {{-- ID:({{ $opcoes->id }}) --}}
+                                    {{-- ID:({{ $opcoes->id }}) 
                                 </option>
-                            @endforeach
+                            @endforeach --}}
+
+                            <select class="col form-control" id="justificativas" name="facilitador" multiple>
+                                <option label="Selecione justificativas">
+                                    @foreach ($justificativas_opcoes as $opcoes)
+                                        <option value="{{ $opcoes->id }}">
+                                            {{ $opcoes->DESCRICAO }}
+                                        </option>
+                                    @endforeach
+                                    </option>
+                            </select>
+
+
                         </select>
                     </div>
                     <div>
@@ -62,9 +76,18 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="entrar-navbar" id="btnsalvar" data-bs-dismiss="modal"><b>SALVAR<b></button>
+                <button type="button" class="entrar-navbar" id="btnsalvar"
+                    data-bs-dismiss="modal"><b>SALVAR<b></button>
             </div>
         </div>
         <script src="{{ asset('js\custom\imgbotoes.js') }}"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl)
+                })
+            });
+        </script>
     </div>
 </div>

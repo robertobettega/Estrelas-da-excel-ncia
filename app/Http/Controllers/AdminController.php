@@ -107,7 +107,7 @@ class AdminController extends Controller
     {
         // Filtra os usuários que não são administradores
         $users = User::where('is_admin', false)
-        ->select('id', 'name', 'email') // Especifique as colunas que você quer
+        ->select('id', 'name', 'email', 'matricula', 'status') // Especifique as colunas que você quer
         ->paginate(20);
     
         $usuarios = home::GetAllUsers();
