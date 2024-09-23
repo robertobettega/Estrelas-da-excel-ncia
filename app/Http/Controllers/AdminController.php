@@ -17,6 +17,22 @@ class AdminController extends Controller
         $id_usuario = $user->id;
             // return $id_usuario;
 
+        $qualidade_cards = home::GetQualidades();
+        // return $qualidade;
+
+        $excelencias = [
+            'hospitalidade' => 1,
+            'prestreza' => 2,
+            'inovacao' => 3,
+            'seguranca' => 4,
+         ];
+
+         $dados = [];
+         foreach ($excelencias as $excelencia => $id) {
+             $dados[$excelencia] = Home::getAllExcelenciasUsers($id);
+         }
+            // return $dados;
+
         $pinusuario = home::pinForUsers($id_usuario);
             $qualidade = array_column($pinusuario, 'QUALIDADE_NOME');
             // return $pinusuario;
@@ -25,32 +41,21 @@ class AdminController extends Controller
         $excelencias_opcoes = home::GetQualidades($qualidade);
             // return $excelencias_opcoes;
 
+        $count_users = home::contagemPinsForUsers($id_usuario);
+        // return $count_users;
+
         //USUÁRIOS DA CAIXA DE SELECT
         $users = home::GetAllUsers();
 
-        // VALORES NÚMERICOS DAS EXCELENCIAS DENTRO DO BANCO, EM QUE SÃO OS SEUS ID'S EM "QUALIDADES"
-        $hospitalidade = 1;
-        $prestreza = 2;
-        $inovacao = 3;
-        $seguranca = 4;
-
-        // COLOCANDO OS VALORES EM CADA TIPO DE EXCELENCIA PARA ELE ME  TRAZER O TOP 3 DE CADA UMA
-        $hospitalidade_rank = home::getAllExcelenciasUsers($hospitalidade);
-        $prestreza_rank = home::getAllExcelenciasUsers($prestreza);
-        $inovacao_rank = home::getAllExcelenciasUsers($inovacao);
-        $seguranca_rank = home::getAllExcelenciasUsers($seguranca);
+        $justificativas_opcoes = home::GetJustificativas();
 
         // ARMAZENANDO EM APENAS 1 VARIAVEL PARA SER ENCAMINHADA PARA O VIEW
         $data = [
             "users" => $users,
             "pinusuarios" => $pinusuario,
+            "countpin_cards" => $count_users,
+            "qualidades_cards" => $qualidade_cards,
             "excelencias_opcoes" => $excelencias_opcoes,
-            "hospitalidade_rank" => $hospitalidade_rank,
-            "prestreza_rank" => $prestreza_rank,
-            "inovacao_rank" => $inovacao_rank,
-            "seguranca_rank" => $seguranca_rank,
-
-            //Informações dos cards da caixa de excelencia para renderizar sem precisar repetir 4 vezes na home
             'excelencias' => $excelencias_opcoes,
         ];
 
@@ -77,9 +82,13 @@ class AdminController extends Controller
         $inovacao_rank = home::getAllExcelenciasUsers($inovacao);
         $seguranca_rank = home::getAllExcelenciasUsers($seguranca);
 
+        $count_pins = home::countPinsforUsers();
+
+
         // ARMAZENANDO EM APENAS 1 VARIAVEL PARA SER ENCAMINHADA PARA O VIEW
         $data = [
             "users" => $users,
+            "count" => $count_pins,
             "excelencias_opcoes" => $excelencias_opcoes,
             "hospitalidade_rank" => $hospitalidade_rank,
             "prestreza_rank" => $prestreza_rank,
@@ -98,7 +107,6 @@ class AdminController extends Controller
     {
         // Filtra os usuários que não são administradores
         $users = User::where('is_admin', false)->paginate(20); // Altere o número para a quantidade de registros por página
-    
         return view('aprovacaorh', compact('users'));
     }
    
