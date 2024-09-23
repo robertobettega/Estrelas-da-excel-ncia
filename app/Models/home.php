@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 class home extends Model
 {
     use HasFactory;
+        protected $table = 'users'; // Defina o nome da tabela correta
+
 
     /**
      * 
@@ -203,5 +205,38 @@ class home extends Model
             'DATA_ATRIBUICAO'    => $dados['DATA_ATRIBUICAO'],
         ]);
     }
+
+
+    public function approve()
+    {
+        // Verifica se o status já é 1
+        if ($this->status == 0) {
+            // Atualiza o status para 1
+            $this->status = 1;
+            return $this->save(); // Retorna true se a atualização for bem-sucedida
+        }
+
+        return false; // Retorna false se o status já for 1
+    }
+
+    public static function updateAcessUser($userId)
+    {
+        // return $userId;
+        $user = self::find($userId);
+        // return $user;
+
+        if ($user) {
+            $updated = $user->approve();
+
+            if ($updated) {
+                return response()->json(['message' => 'Usuário aprovado com sucesso.']);
+            } else {
+                return response()->json(['message' => 'O usuário já está aprovado.'], 409);
+            }
+        }
+
+        return response()->json(['message' => 'Usuário não encontrado.'], 404);
+    }
+    
     
 }

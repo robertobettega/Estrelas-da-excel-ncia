@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
+use App\Models\home;
+
 // ROTAS DE USUÁRIOS COMUNS
 Route::get('/login', function () { return view('login'); })->middleware(['auth', 'verified'])->name('login');
 Route::get('/Cadastro', function () { return view('Cadastro'); })->middleware(['auth', 'verified'])->name('cadastro');
@@ -43,6 +45,9 @@ Route::get('/dados', function () {
 // Rota aguardando aprovação
 Route::get('/aguardandoaprovacao', function () { return view('aguardandoaprovacao'); })->middleware(['verified']);
 
+// Route::post('aprovar/{id}', [home::class, 'updateAcessUser']);
+Route::post('/acesso/{id}', [home::class, 'updateAcessUser']);
+
 // ROTAS APENAS PARA ADMINISTRADORES
 Route::middleware('auth', 'verified', 'status')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -51,7 +56,7 @@ Route::middleware('auth', 'verified', 'status')->group(function () {
 
     // Estatísticas RH (acesso restrito a administradores)
     Route::get('/estatisticas-rh', [AdminController::class, 'RHPage'])->middleware(['verified', 'admin']);
-    Route::get('/aprovacaorh', [AdminController::class, 'index'])->middleware(['verified', 'admin']);
+    Route::get('/aprovacaorh', [AdminController::class, 'aprovarUser'])->middleware(['verified', 'admin']);
 });
 
 // Rota de autenticação
