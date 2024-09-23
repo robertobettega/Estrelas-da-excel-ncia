@@ -4,7 +4,12 @@ botaosalvar.addEventListener("click", function() {
     Swal.fire({
         title: "Pin salvo!",
         text: "Você dedicou um Pin a um colega!",
-        icon: "success"
+        icon: "success",
+        confirmButtonColor: "linear-gradient(to right, #1C2C5C, #13743C)",
+        confirmButtonText:"Continuar",
+        customClass: {
+    confirmButton: 'entrar'
+        }
       });
 
     // CAIXAS DE OPTIONS
