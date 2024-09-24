@@ -30,8 +30,9 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->matricula }}</td>
                                 <td>
-                                    <form style="display:inline;">
-                                        <button type="submit" id="btnaprovar" class="entrar-aprovar">Aprovar</button>
+                                    <form action="{{ url('/acesso/' . $user->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="aprovar entrar-aprovar">Aprovar</button>
                                     </form>
                                 </td>
                             </tr>
@@ -42,7 +43,6 @@
                             </tr>
                         @endif
                     </tbody>
-                
                 </table>
             </div>
         </div>
@@ -53,14 +53,4 @@
         </div>
     </div>
     </div>
-
-    <script>
-        function aprovar(button) {
-            // Altera o texto do botão e a classe
-            button.textContent = 'Aprovado';
-            button.classList.remove('btn-primary');
-            button.classList.add('btn-danger'); // Muda para vermelho
-            button.disabled = true; // Desabilita o botão após clicar
-        }
-    </script>
 @endsection
