@@ -109,11 +109,35 @@ class AdminController extends Controller
         $users = User::where('is_admin', false)
         ->select('id', 'name', 'email', 'matricula', 'status') // Especifique as colunas que você quer
         ->paginate(20);
+
+        // $statususer = arrat
+        // return $users;
     
         $usuarios = home::GetAllUsers();
         // return $usuarios;
+        // $status = array_column(array: $usuarios, 'status', 'name');
+ 
+        
+        $aprovados = [];
+        $nao_aprovados = [];
+        
+        foreach ($users as $usuario) {
+            if ($usuario['status'] == 1) {
+                $aprovados[] = $usuario;
+            } else {
+                $nao_aprovados[] = $usuario;
+            }
+        }
+        
+        // return $nao_aprovados;
+        
+        $data = [
+            'paginate'=> $users,
+            'naoaprovados' => $nao_aprovados,
+        ];
 
-        return view('aprovacaorh', compact('users'));
+        // return $data;
+        return view('aprovacaorh' , $data);
 
     }
    

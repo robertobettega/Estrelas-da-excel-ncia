@@ -31,6 +31,7 @@ botaosalvar.addEventListener("click", function() {
         },
         success: function (response) {
             console.log("AJAX está enviando", response);
+            console.log(justificativa);
             // window.location.href = `/insert`;
         },
         error: function (xhr, status, error) {

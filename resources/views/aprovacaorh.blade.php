@@ -23,8 +23,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (Auth::user()->status == 1)
-                            @foreach ($users as $user)
+                            @foreach ($naoaprovados as $user)
                             <tr>
                                 <td>{{ $user->name }}{{$user->status}}</td>
                                 <td>{{ $user->email }}</td>
@@ -37,11 +36,9 @@
                                 </td>
                             </tr>
                             @endforeach
-                        @else
                             <tr>
-                                <td colspan="4">Não há cadastros para serem aprovados :)</td>
+                                {{-- <td colspan="4">Não há cadastros para serem aprovados :)</td> --}}
                             </tr>
-                        @endif
                     </tbody>
                     
                     {{-- <tbody>
@@ -68,7 +65,7 @@
 
 
         <div class="d-flex justify-content-center">
-            {{ $users->links('components.custom-pagination') }}
+            {{ $paginate->links('components.custom-pagination') }}
         </div>
     </div>
     </div>
