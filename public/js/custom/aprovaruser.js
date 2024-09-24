@@ -27,13 +27,13 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(data => {
 
                 Swal.fire({
-                    title: "Pin enviado com sucesso",
-                    text: "Seu pin foi enviado com sucesso.",
+                    title: "Sucesso!",
+                    text: "Cadastro aprovado com sucesso",
                     icon: "success",
                     confirmButtonColor: "linear-gradient(to right, #1C2C5C, #13743C)",
-                    confirmButtonText: "OK",
+                    confirmButtonText: "Continuar",
                     customClass: {
-                        confirmButton: 'entrar'
+                        confirmButton: 'Entrar'
                     }
                 }).then(() => {
                     window.location.reload();
