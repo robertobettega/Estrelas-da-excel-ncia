@@ -15,37 +15,39 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.0/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css\custom\style.css') }}">
     <link rel="stylesheet" href="https://use.typekit.net/your-project-id.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/css/multi-select-tag.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/css/multi-select-tag.css">
 </head>
 
 
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ">
             <a href="home">
                 <img src="images/Logo Hospital Rio Grande.png" class="logo2" alt="Hospital Rio Grande">
             </a>
-            <div class="dropdown">
-                <button class="entrar-navbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div>{{ Auth::user()->name }}<i class="bi bi-person-fill"></i></div>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="profile">Meus dados</a></li>
-                    <li><a class="dropdown-item" href="minhasestatisticas">Minhas estatísticas</a></li>
-
-                    @if (Auth::user()->isAdmin())
-                        <li><a class="dropdown-item" href="estatisticas-rh">Estatísticas RH</a></li>
-                        <li><a class="dropdown-item" href="aprovacaorh">Aprovação RH</a></li>
-                    @endif
-
-                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#AjudaModal">Ajuda</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                    <li><a class="dropdown-item" href="#"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
-                    </li>
-                </ul>
+            <div class="d-flex align-items-center">
+                <div class="dropdown me-2">
+                    <button class="entrar-navbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div>{{ Auth::user()->name }} <i class="bi bi-person-fill"></i></div>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="profile">Meus dados</a></li>
+                        <li><a class="dropdown-item" href="minhasestatisticas">Minhas estatísticas</a></li>
+                        @if (Auth::user()->isAdmin())
+                            <li><a class="dropdown-item" href="estatisticas-rh">Estatísticas RH</a></li>
+                            <li><a class="dropdown-item" href="aprovacaorh">Aprovação RH</a></li>
+                        @endif
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#AjudaModal">Ajuda</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -58,9 +60,10 @@
     <footer style="font-weight:normal">
         <div class="d-flex flex-wrap">
             <div class="text-center justify-content-center">
-            <div class="col-11">Copyright © 2024 <a href="http://www.hospitalriogrande.com.br/" target="_blank">Hospital Rio Grande</a>. Todos os direitos reservados. Versão 0.0.1</div>
+                <div class="col-11">Copyright © 2024 <a href="http://www.hospitalriogrande.com.br/"
+                        target="_blank">Hospital Rio Grande</a>. Todos os direitos reservados. Versão 0.0.1</div>
 
-            <img src="images/GPConnect.svg" style="width: 100px; margin-top: 1px;" >
+                <img src="images/GPConnect.svg" style="width: 100px; margin-top: 1px;">
 
             </div>
         </div>
