@@ -21,8 +21,7 @@
                                 <option value="{{ $usuarios->id }}">
                                     {{ $usuarios->name }}
                                     {{-- {{ $usuarios->sobrenome }}  --}}
-                                    {{-- {{ $usuarios->matricula }} --}}
-                                    ({{ $usuarios->id }})
+                                    ({{ $usuarios->matricula }})
                                 </option>
                             @endforeach
                         </select>
@@ -42,15 +41,12 @@
                     </div>
 
                     <div>
-                        <label>Justificativa: <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-title="Você pode selecionar mais de uma opção com o atalho 'Shift + click'"></i></label>
-                        <select class="col form-select" multiple aria-label="Multiple select" id="caixajustificativa">
-                            <option selected>Selecione a excelência</option>
+                        <label>Justificativa:</label>
+                        <select class="col form-select" id="caixajustificativa">
+                            <option selected>Selecione a justificativa</option>
                             @foreach ($justificativas_opcoes as $opcoes)
                                 <option value="{{ $opcoes->id }}">
                                     {{ $opcoes->DESCRICAO }}
-                                    ID:({{ $opcoes->id }}) 
                                 </option>
                             @endforeach 
 
