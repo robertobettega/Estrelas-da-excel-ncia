@@ -230,6 +230,7 @@ class home extends Model
 
             if ($updated) {
                 return response()->json(['message' => 'Usuário aprovado com sucesso.']);
+
             } else {
                 return response()->json(['message' => 'O usuário já está aprovado.'], 409);
             }
