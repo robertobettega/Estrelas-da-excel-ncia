@@ -1,17 +1,6 @@
 var botaosalvar = document.getElementById("btnsalvar");
 botaosalvar.addEventListener("click", function() {
 
-    Swal.fire({
-        title: "Pin salvo!",
-        text: "Você dedicou um Pin a um colega!",
-        icon: "success",
-        confirmButtonColor: "linear-gradient(to right, #1C2C5C, #13743C)",
-        confirmButtonText:"Continuar",
-        customClass: {
-    confirmButton: 'entrar'
-        }
-      });
-
     // CAIXAS DE OPTIONS
     const option_usuario = document.getElementById('caixausuario').value;
     const excelencia = document.getElementById("caixaexcelencia").value;
@@ -32,6 +21,18 @@ botaosalvar.addEventListener("click", function() {
         success: function (response) {
             console.log("AJAX está enviando", response);
             console.log(justificativa);
+
+            Swal.fire({
+                title: "Pin salvo!",
+                text: "Você dedicou um Pin a um colega!",
+                icon: "success",
+                confirmButtonColor: "linear-gradient(to right, #1C2C5C, #13743C)",
+                confirmButtonText:"Continuar",
+                customClass: {
+            confirmButton: 'entrar'
+                }
+              });
+
             // window.location.href = `/insert`;
         },
         error: function (xhr, status, error) {
@@ -40,6 +41,17 @@ botaosalvar.addEventListener("click", function() {
             // console.log('Erro:', error);
             // console.log('Resposta do servidor:', xhr.responseText);
     
+            Swal.fire({
+                title: "Pin não enviado",
+                text: "Ocorreu um erro no envio do seu pin, volte mais tarde",
+                icon: "error",
+                confirmButtonColor: "linear-gradient(to right, #1C2C5C, #13743C)",
+                confirmButtonText:"OK",
+                customClass: {
+            confirmButton: 'entrar'
+                }
+              });
+
             console.log(option_usuario);
             console.log(excelencia);
             console.log(justificativa);

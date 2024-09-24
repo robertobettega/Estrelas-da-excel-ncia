@@ -26,7 +26,7 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
     Route::get('/verificados', [HomeController::class, 'index']);
     Route::post('/insert', [HomeController::class, 'insertDados']);
     Route::get('/teste', [HomeController::class, 'renderCardExcelencias']);
-    Route::get('/teste', [HomeController::class, 'imprimirUser'])->name('dashboard');
+    Route::get('/usuario', [HomeController::class, 'imprimirUser'])->name('dashboard');
 });
 
 // ROTA QUE VERIFICA A CONEXÃO DOS BANCOS
