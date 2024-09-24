@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-
     const buttons = document.querySelectorAll(".aprovar");
     console.log(buttons);
 
     buttons.forEach(button => {
         button.addEventListener("click", function(event) {
             event.preventDefault();
+            
             const userId = this.closest("form").getAttribute("action").split('/').pop(); 
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -21,14 +21,36 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (!response.ok) {
                     throw new Error(`Erro: ${response.status}`);
                 }
-                location.reload(true);
+                
                 return response.json();
             })
             .then(data => {
-                alert(data.message); 
+
+                Swal.fire({
+                    title: "Pin enviado com sucesso",
+                    text: "Seu pin foi enviado com sucesso.",
+                    icon: "success",
+                    confirmButtonColor: "linear-gradient(to right, #1C2C5C, #13743C)",
+                    confirmButtonText: "OK",
+                    customClass: {
+                        confirmButton: 'entrar'
+                    }
+                }).then(() => {
+                    window.location.reload();
+                });
             })
             .catch(error => {
                 console.error('Erro:', error);
+                Swal.fire({
+                    title: "Pin não enviado",
+                    text: "Ocorreu um erro no envio do seu pin, volte mais tarde.",
+                    icon: "error",
+                    confirmButtonColor: "linear-gradient(to right, #1C2C5C, #13743C)",
+                    confirmButtonText: "OK",
+                    customClass: {
+                        confirmButton: 'entrar'
+                    }
+                });
             });
         });
     });
