@@ -29,9 +29,10 @@
                     <ul class="list-group list-group-flush">
                         {{-- AQUI ESTAMOS SEPARANDO O VALOR DE $USUARIOS (VALORES DO BANCO) NAS COLUNAS PARA CADA DADO NECESSÁRIO DENTRO DA CONSULTA DA MODEL --}}
                         @foreach ($usuarios as $user)
-                        <li class="list-group-item" style="font-weight: normal;">
-                                {{ $user->NOME_ATRIBUIDO }}: {{ $user->count_valor }} pins
+                            <li class="list-group-item" style="font-weight: normal;">
                                 <span class="badge rounded-pill text-bg-success">{{ $user->posicoes }}°</span>
+                                {{ $user->NOME_ATRIBUIDO }}: <span
+                                    class="badge text-bg-secondary">{{ $user->count_valor }} pins</span>
                             </li>
                         @endforeach
                     </ul>
