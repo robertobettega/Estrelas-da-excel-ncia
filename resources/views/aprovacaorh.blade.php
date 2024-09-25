@@ -23,42 +23,26 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if($naoaprovados)
                             @foreach ($naoaprovados as $user)
                             <tr>
-                                <td>{{ $user->name }}{{$user->status}}</td>
+                                <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->matricula }}</td>
                                 <td>
                                     <form action="{{ url('/acesso/' . $user->id) }}" method="POST" style="display:inline;">
                                         @csrf
-                                        <button type="submit" class="aprovar btn btn-primary">Aprovar</button>
+                                        <button type="submit" class="aprovar entrar-aprovar">Aprovar</button>
                                     </form>
                                 </td>
                             </tr>
                             @endforeach
+                        @else
                             <tr>
-                                {{-- <td colspan="4">Não há cadastros para serem aprovados :)</td> --}}
+                                <td colspan="4">Não há cadastros para serem aprovados :)</td>
                             </tr>
+                        @endif
                     </tbody>
-                    
-                    {{-- <tbody>
-                        <tr>
-                            @foreach (Auth::user()->status == 1)
-                                @foreach ($users as $user)
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->matricula }}</td>
-                                    <td>
-                                        <form action="{{ url('/acesso/' . $user->id) }}" method="POST"
-                                            style="display:inline;">
-                                            @csrf
-                                            <button type="submit" class="aprovar btn btn-primary">Aprovar</button>
-                                        </form>
-                                    </td>
-                                @endforeach
-                        </tr>
-
-                    </tbody> --}}
                 </table>
             </div>
         </div>
@@ -69,14 +53,4 @@
         </div>
     </div>
     </div>
-
-    <script>
-        function aprovar(button) {
-            // Altera o texto do botão e a classe
-            button.textContent = 'Aprovado';
-            button.classList.remove('btn-primary');
-            button.classList.add('btn-danger'); // Muda para vermelho
-            button.disabled = true; // Desabilita o botão após clicar
-        }
-    </script>
 @endsection

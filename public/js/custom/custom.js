@@ -31,7 +31,9 @@ botaosalvar.addEventListener("click", function() {
                 customClass: {
             confirmButton: 'entrar'
                 }
-              });
+            }).then(() => {
+                window.location.reload();
+            });
 
             // window.location.href = `/insert`;
         },
