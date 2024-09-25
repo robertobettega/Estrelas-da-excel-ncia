@@ -100,13 +100,13 @@ class HomeController extends Controller
 
             $user = Auth::user();
 
+
             $dados = [
                 'ID_QUALIDADE'       => $request->input('excelencia'),
                 'ID_USUARIO' => $user->id, 
                 'ID_USUARIOATRIBUIDO' => $request->input('usuario'),
                 'ID_JUSTIFICATIVA'  => $request->input('justificativa'),
                 'DEDICATORIA'       => $request->input('dedicatoria'),
-                'DATA_ATRIBUICAO'   => now(),
             ];
     
             Home::insertPin($dados);
