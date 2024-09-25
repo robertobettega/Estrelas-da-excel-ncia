@@ -22,7 +22,7 @@
         <div class="row g-0">
             <div class="col-md-4 text-center">
                 <img src="images/{{ ucfirst($categoria) }}.png" style="width: 140px" alt="{{ ucfirst($categoria) }}">
-                <div style="font-weight: 700;">{{ ucfirst($categoria) }}</div>
+                <div style="font-weight: 700;" class="mt-3 mb-2">{{ $usuarios[0]->DESCRICAO }}</div>
             </div>
             <div class="col-md-8">
                 <div class="card-body">

@@ -77,12 +77,15 @@ class home extends Model
                 LB.name as NOME_ATRIBUIDO,
                 ID_USUARIOATRIBUIDO,
                 ID_QUALIDADE,
+                qua.DESCRICAO,
                 count_valor,
                 rankvalor as posicoes
             FROM ranked_usuario
                 INNER JOIN l_breeze.users as LB
                     ON LB.id = ID_USUARIOATRIBUIDO
-                                WHERE rankvalor <= 3 and ID_QUALIDADE = $excelencia
+				INNER JOIN estrelaexcelencia.qualidade as qua
+					ON qua.id = ranked_usuario.ID_QUALIDADE
+                    WHERE rankvalor <= 3 and ID_QUALIDADE = $excelencia
             ORDER BY posicoes asc;
                     ";
                     
@@ -202,21 +205,18 @@ class home extends Model
             'ID_USUARIOATRIBUIDO' => $dados['ID_USUARIOATRIBUIDO'],
             'ID_JUSTIFICATIVA'    => $dados['ID_JUSTIFICATIVA'],
             'DEDICATORIA'         => $dados['DEDICATORIA'],
-            'DATA_ATRIBUICAO'    => $dados['DATA_ATRIBUICAO'],
         ]);
     }
 
 
     public function approve()
     {
-        // Verifica se o status já é 1
         if ($this->status == 0) {
-            // Atualiza o status para 1
             $this->status = 1;
-            return $this->save(); // Retorna true se a atualização for bem-sucedida
+            return $this->save();
         }
 
-        return false; // Retorna false se o status já for 1
+        return false;
     }
 
     public static function updateAcessUser($userId)
