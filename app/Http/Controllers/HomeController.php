@@ -23,10 +23,8 @@ class HomeController extends Controller
     public function HomePage()
     {
 
-            // Verifica o status do usuário aqui
             if (Auth::check() && Auth::user()->status == 0) {
-                // Alguma lógica para permitir que o usuário acesse a página
-                return view('aguardandoaprovacao'); // Permite o acesso, mesmo que o status seja 0
+                return view('aguardandoaprovacao'); 
             }
 
         $excelencias_opcoes = home::GetQualidades();
@@ -100,13 +98,13 @@ class HomeController extends Controller
 
             $user = Auth::user();
 
+
             $dados = [
                 'ID_QUALIDADE'       => $request->input('excelencia'),
                 'ID_USUARIO' => $user->id, 
                 'ID_USUARIOATRIBUIDO' => $request->input('usuario'),
                 'ID_JUSTIFICATIVA'  => $request->input('justificativa'),
                 'DEDICATORIA'       => $request->input('dedicatoria'),
-                'DATA_ATRIBUICAO'   => now(),
             ];
     
             Home::insertPin($dados);

@@ -66,13 +66,13 @@
                 </div>
             </div>
         </div>
-        <div class="card justify-content-center text-center" style="margin:15px">
+        {{-- <div class="card justify-content-center text-center" style="margin:15px">
             <div class="card-header header-avaliacao">
                 <b>Meu histórico de pins</b>
             </div>
             <div id="graficoHistoricoPins" style="height: 300px; width: 100%;">
             </div>
-        </div>
+        </div> --}}
     </div>
 
 @endsection
