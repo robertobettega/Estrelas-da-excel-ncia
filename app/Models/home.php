@@ -77,12 +77,15 @@ class home extends Model
                 LB.name as NOME_ATRIBUIDO,
                 ID_USUARIOATRIBUIDO,
                 ID_QUALIDADE,
+                qua.DESCRICAO,
                 count_valor,
                 rankvalor as posicoes
             FROM ranked_usuario
                 INNER JOIN l_breeze.users as LB
                     ON LB.id = ID_USUARIOATRIBUIDO
-                                WHERE rankvalor <= 3 and ID_QUALIDADE = $excelencia
+				INNER JOIN estrelaexcelencia.qualidade as qua
+					ON qua.id = ranked_usuario.ID_QUALIDADE
+                    WHERE rankvalor <= 3 and ID_QUALIDADE = $excelencia
             ORDER BY posicoes asc;
                     ";
                     
